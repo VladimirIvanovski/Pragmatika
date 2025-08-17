@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f8fafc"/>
+  <rect x="20" y="20" width="360" height="260" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" rx="8"/>
+  
+  <!-- Header -->
+  <rect x="40" y="40" width="320" height="40" fill="#3b82f6" rx="4"/>
+  <text x="200" y="65" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Интеркултурна прагматика</text>
+  
+  <!-- Content boxes -->
+  <rect x="40" y="100" width="100" height="80" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="90" y="125" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Македонски</text>
+  <text x="90" y="140" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="8">јазик</text>
+  
+  <rect x="150" y="100" width="100" height="80" fill="#dcfce7" stroke="#16a34a" stroke-width="1" rx="4"/>
+  <text x="200" y="125" text-anchor="middle" fill="#15803d" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Германски</text>
+  <text x="200" y="140" text-anchor="middle" fill="#15803d" font-family="Arial, sans-serif" font-size="8">јазик</text>
+  
+  <rect x="260" y="100" width="100" height="80" fill="#fef3c7" stroke="#d97706" stroke-width="1" rx="4"/>
+  <text x="310" y="125" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Англиски</text>
+  <text x="310" y="140" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="8">јазик</text>
+  
+  <!-- Arrows showing interaction -->
+  <path d="M140 140 L150 140" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M250 140 L260 140" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Research elements -->
+  <circle cx="90" cy="220" r="25" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
+  <text x="90" y="225" text-anchor="middle" fill="#4338ca" font-family="Arial, sans-serif" font-size="8">Анализа</text>
+  
+  <circle cx="200" cy="220" r="25" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+  <text x="200" y="225" text-anchor="middle" fill="#be185d" font-family="Arial, sans-serif" font-size="8">Студии</text>
+  
+  <circle cx="310" cy="220" r="25" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <text x="310" y="225" text-anchor="middle" fill="#047857" font-family="Arial, sans-serif" font-size="8">Резултати</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>

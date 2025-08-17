@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title or 'Интеркултурна Прагматика' }}</title>
+  <meta name="description" content="Современи пристапи во истражувањето на интеркултурната прагматика и нејзината примена во наставата." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="{{ url_for('index') }}">Интеркултурна Прагматика</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Мени" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="siteNav" aria-label="Главна навигација">
+        <a class="nav-link {{ 'active' if active_page=='home' else '' }}" href="{{ url_for('index') }}">Почетна</a>
+        <a class="nav-link {{ 'active' if active_page=='about' else '' }}" href="{{ url_for('about') }}">За проектот</a>
+        <a class="nav-link {{ 'active' if active_page=='research' else '' }}" href="{{ url_for('research') }}">Истражување</a>
+        <a class="nav-link {{ 'active' if active_page=='team' else '' }}" href="{{ url_for('team') }}">Тим</a>
+        <a class="nav-link {{ 'active' if active_page=='gallery' else '' }}" href="{{ url_for('gallery') }}">Галерија</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">Интеркултурна Прагматика</div>
+      <div class="footer-meta">© 2025 Универзитет „Гоце Делчев“ - Штип</div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
+
+
+
+

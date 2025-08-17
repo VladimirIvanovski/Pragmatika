@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">{{ content.title if content.title else 'Галерија' }}</h1>
+      
+      {% if content.sections %}
+        {% for section in content.sections %}
+          <h2>{{ section.title }}</h2>
+          <div class="gallery-grid">
+            {% for image in section.images %}
+              <div class="gallery-item">
+                <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy">
+                {% if image.caption %}
+                  <p class="image-caption">{{ image.caption }}</p>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endfor %}
+      {% else %}
+        <!-- Fallback content when no images are available -->
+        <div class="empty-gallery">
+          <h2>Истражувачки активности</h2>
+          <p class="muted">Слики ќе бидат додадени наскоро...</p>
+          
+          <h2>Тимски активности</h2>
+          <p class="muted">Слики ќе бидат додадени наскоро...</p>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

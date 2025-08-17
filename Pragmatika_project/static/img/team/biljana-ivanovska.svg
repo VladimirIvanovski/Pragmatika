@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#f8fafc"/>
+  <circle cx="100" cy="100" r="90" fill="#dbeafe" stroke="#3b82f6" stroke-width="3"/>
+  
+  <!-- Professional portrait placeholder -->
+  <circle cx="100" cy="80" r="25" fill="#1e40af"/>
+  <ellipse cx="100" cy="130" rx="35" ry="45" fill="#1e40af"/>
+  
+  <!-- Academic elements -->
+  <rect x="70" y="40" width="60" height="8" fill="#3b82f6" rx="4"/>
+  <text x="100" y="50" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="8" font-weight="bold">Проф. д-р</text>
+  
+  <!-- Decorative elements representing expertise -->
+  <circle cx="60" cy="60" r="3" fill="#60a5fa"/>
+  <circle cx="140" cy="60" r="3" fill="#60a5fa"/>
+  <circle cx="60" cy="140" r="3" fill="#60a5fa"/>
+  <circle cx="140" cy="140" r="3" fill="#60a5fa"/>
+  
+  <text x="100" y="185" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Б. Ивановска</text>
+</svg>
