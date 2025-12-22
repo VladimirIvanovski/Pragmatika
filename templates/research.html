@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="section">
+    <div class="container prose">
+      <h1>{{ content.title if content.title else 'Опис на истражување' }}</h1>
+      
+      {% if content.sections %}
+        {% for section in content.sections %}
+          <h2>{{ section.title }}</h2>
+          {% for paragraph in section.content %}
+            <p>{{ paragraph }}</p>
+          {% endfor %}
+        {% endfor %}
+      {% else %}
+        <!-- Fallback content -->
+        <p>Современата наставна практика во странските јазици се соочува со сè поголема потреба за вклучување на интеркултурната прагматичка компетенција како клучен елемент во образованието. Прагматиката, која се фокусира на изучувањето на употребата на јазикот во конкретни комуникациски контексти, одговара на прашањето како говорителите во различни култури ги манифестираат своите интеракции и кои се стратегиите што ги користат за да ја изразат својата намера на начин што е културно соодветен и прифатлив.</p>
+        <p>Овој проект има за цел да ги истражи современите пристапи во интеркултурната прагматика, истовремено истражувајќи како научните концепти во оваа област можат да се применат во наставата по странски јазици, а особено во изучувањето на германскиот и англискиот како странски јазици, но и нивна споредба со изворните говорители на германски, англиски како и на македонски јазик.</p>
+        <p>Истражувањата покажуваат дека меѓукултурните разлики имаат длабоко влијание на комуникациските стратегии, феноменот на учтивоста и интерпретацијата на говорните чинови. Прагматичките истражувања се фокусираат на интерпретациите кои настануваат во меѓујазичните комуникации, како и на стратегиите кои се користат за поврзување на значењето помеѓу различните културни системи. Во овој контекст, настава која ги вклучува интеркултурните прагматички принципи е особено важна за развојот на прагматичката компетенција.</p>
+      {% endif %}
+    </div>
+  </section>
+
+  {% if content.charts %}
+    <section class="section section-accent">
+      <div class="container">
+        {% for chart in content.charts %}
+          <h2 class="section-title">{{ chart.title }}</h2>
+          <canvas id="{{ chart.id }}" height="120"></canvas>
+        {% endfor %}
+      </div>
+    </section>
+  {% else %}
+    <section class="section section-accent">
+      <div class="container">
+        <h2 class="section-title">Илустративен графикон</h2>
+        <canvas id="competenceChart" height="120"></canvas>
+      </div>
+    </section>
+  {% endif %}
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Pass chart data from server to client
+    window.chartData = {{ content.charts | tojson if content.charts else '[]' }};
+  </script>
+  <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="section">
+    <div class="container">
+      <h1 class="page-title">Документи и материјали</h1>
+      <p class="lead">Преглед на сите достапни документи, презентации и материјали поврзани со проектот.</p>
+      
+      {% if documents %}
+        <!-- Statistics -->
+        <div class="documents-stats">
+          <div class="stat-card">
+            <div class="stat-value">{{ documents|length }}</div>
+            <div class="stat-label">Вкупно документи</div>
+          </div>
+          {% set pdf_count = grouped_documents.get('pdf', [])|length %}
+          {% set docx_count = grouped_documents.get('docx', [])|length %}
+          {% set pptx_count = grouped_documents.get('pptx', [])|length %}
+          {% if pdf_count > 0 %}
+          <div class="stat-card">
+            <div class="stat-value">{{ pdf_count }}</div>
+            <div class="stat-label">PDF документи</div>
+          </div>
+          {% endif %}
+          {% if docx_count > 0 %}
+          <div class="stat-card">
+            <div class="stat-value">{{ docx_count }}</div>
+            <div class="stat-label">Word документи</div>
+          </div>
+          {% endif %}
+          {% if pptx_count > 0 %}
+          <div class="stat-card">
+            <div class="stat-value">{{ pptx_count }}</div>
+            <div class="stat-label">PowerPoint презентации</div>
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- Documents by Type -->
+        {% for doc_type, docs in grouped_documents.items() %}
+          <div class="documents-section">
+            <h2 class="section-title">
+              {% if doc_type == 'pdf' %}
+                📄 PDF Документи
+              {% elif doc_type == 'docx' %}
+                📝 Word Документи
+              {% elif doc_type == 'pptx' %}
+                📊 PowerPoint Презентации
+              {% else %}
+                📎 {{ doc_type|upper }} Документи
+              {% endif %}
+            </h2>
+            
+            <div class="documents-grid">
+              {% for doc in docs %}
+                <div class="document-card">
+                  <div class="document-icon">
+                    {% if doc.type == 'pdf' %}
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                      </svg>
+                    {% elif doc.type == 'docx' %}
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                      </svg>
+                    {% elif doc.type == 'pptx' %}
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="9" y1="9" x2="15" y2="9"></line>
+                        <line x1="9" y1="15" x2="15" y2="15"></line>
+                        <line x1="9" y1="12" x2="15" y2="12"></line>
+                      </svg>
+                    {% else %}
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                        <polyline points="13 2 13 9 20 9"></polyline>
+                      </svg>
+                    {% endif %}
+                  </div>
+                  
+                  <div class="document-info">
+                    <h3 class="document-title">{{ doc.filename }}</h3>
+                    
+                    {% if doc.description %}
+                      <p class="document-description">{{ doc.description[:150] }}{% if doc.description|length > 150 %}...{% endif %}</p>
+                    {% endif %}
+                    
+                    <div class="document-meta">
+                      <span class="meta-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        {{ doc.size_mb }} MB
+                      </span>
+                      
+                      {% if doc.slide_count %}
+                        <span class="meta-item">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                          </svg>
+                          {{ doc.slide_count }} слајдови
+                        </span>
+                      {% endif %}
+                      
+                      {% if doc.word_count %}
+                        <span class="meta-item">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                          </svg>
+                          {{ doc.word_count }} зборови
+                        </span>
+                      {% endif %}
+                    </div>
+                  </div>
+                  
+                  <div class="document-actions">
+                    <a href="{{ url_for('view_document', filename=doc.filename) }}" 
+                       class="btn btn-primary">
+                      Прегледај
+                    </a>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="empty-state">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+          <h3>Нема достапни документи</h3>
+          <p>Документите ќе се појават тука кога ќе бидат додадени во папката за документи.</p>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}
+

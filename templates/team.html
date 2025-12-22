@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">{{ content.title if content.title else 'Тим' }}</h1>
+      <div class="team-grid">
+        {% if content.members %}
+          {% for member in content.members %}
+            <div class="team-card">
+              {% if member.image %}
+                <img src="{{ member.image }}" alt="{{ member.name }}" class="team-image">
+              {% endif %}
+              <h3>{{ member.name }}</h3>
+              {% if member.role %}
+                <p class="role">{{ member.role }}</p>
+              {% endif %}
+              {% if member.affiliation %}
+                <p class="affiliation">{{ member.affiliation }}</p>
+              {% endif %}
+              {% if member.bio %}
+                <p class="bio">{{ member.bio }}</p>
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% else %}
+          <!-- Fallback content -->
+          <div class="team-card">
+            <h3>проф. д-р Билјана Ивановска</h3>
+            <p class="role">Главен истражувач и носител на проектот</p>
+            <p class="affiliation">УГД-Штип</p>
+          </div>
+
+          <div class="team-card"><h3>проф. д-р Ева Ѓеорѓиевска</h3><p class="affiliation">УГД-Штип</p></div>
+          <div class="team-card"><h3>проф. д-р Натка Јанкова-Алаѓозовска</h3><p class="affiliation">УГД-Штип</p></div>
+          <div class="team-card"><h3>проф. д-р Брикена Џафери</h3><p class="affiliation">УЈИЕ</p></div>
+          <div class="team-card"><h3>проф. д-р Гзим Џафери</h3><p class="affiliation">УЈИЕ</p></div>
+          <div class="team-card"><h3>доц. д-р Ана Коцева</h3><p class="affiliation">УГД-Штип</p></div>
+          <div class="team-card"><h3>доц. д-р Симона Серафимовска</h3><p class="affiliation">УГД-Штип</p></div>
+          <div class="team-card"><h3>доц. д-р Сашка Јовановска</h3><p class="affiliation">УГД-Штип</p></div>
+          <div class="team-card"><h3>доц. д-р Марија Гркова</h3><p class="affiliation">УГД-Штип</p></div>
+          <div class="team-card"><h3>доц. д-р Марија Соколова</h3><p class="affiliation">УГД-Штип</p></div>
+          <div class="team-card"><h3>виш лектор Марица Тасевска</h3><p class="affiliation">УГД-Штип</p></div>
+          <div class="team-card"><h3>Александра Митева</h3><p class="role">млад истражувач</p></div>
+          <div class="team-card"><h3>Катерина Харбова</h3><p class="role">млад истражувач</p></div>
+          <div class="team-card"><h3>Владимир Ивановски</h3><p class="role">млад истражувач</p></div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

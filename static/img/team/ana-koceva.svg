@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#fef3c7"/>
+  <circle cx="100" cy="100" r="90" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>
+  
+  <!-- Professional portrait placeholder -->
+  <circle cx="100" cy="80" r="25" fill="#92400e"/>
+  <ellipse cx="100" cy="130" rx="35" ry="45" fill="#92400e"/>
+  
+  <!-- Academic elements -->
+  <rect x="70" y="40" width="60" height="8" fill="#d97706" rx="4"/>
+  <text x="100" y="50" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="8" font-weight="bold">Доц. д-р</text>
+  
+  <!-- Decorative elements representing expertise -->
+  <circle cx="60" cy="60" r="3" fill="#fbbf24"/>
+  <circle cx="140" cy="60" r="3" fill="#fbbf24"/>
+  <circle cx="60" cy="140" r="3" fill="#fbbf24"/>
+  <circle cx="140" cy="140" r="3" fill="#fbbf24"/>
+  
+  <text x="100" y="185" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="10" font-weight="bold">А. Коцева</text>
+</svg>

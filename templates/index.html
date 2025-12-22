@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1 class="hero-title">{{ content.hero.title if content.hero else 'Современи пристапи во истражувањето на интеркултурната прагматика и нејзината примена во наставата' }}</h1>
+      <p class="hero-subtitle">{{ content.hero.subtitle if content.hero else 'Од научни концепти до практична реализација' }}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ url_for('research') }}">Истражување</a>
+        <a class="btn btn-ghost" href="{{ url_for('team') }}">Запознај го тимот</a>
+      </div>
+    </div>
+    <div class="hero-bg" aria-hidden="true"></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-3">
+        {% if content.features %}
+          {% for feature in content.features %}
+            <div class="card">
+              <h3>{{ feature.title }}</h3>
+              <p>{{ feature.description }}</p>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="card">
+            <h3>Цели</h3>
+            <p>Истражување на современи пристапи во интеркултурната прагматика и нивна примена во наставата по странски јазици.</p>
+          </div>
+          <div class="card">
+            <h3>Методологија</h3>
+            <p>Анализа на комуникациски стратегии, учтивост и говорни чинови преку споредбени студии помеѓу различни јазични и културни системи.</p>
+          </div>
+          <div class="card">
+            <h3>Примена</h3>
+            <p>Развој на наставни модели за развој на интеркултурна прагматичка компетенција кај ученици и студенти.</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-accent">
+    <div class="container stats">
+      {% if content.stats %}
+        {% for stat in content.stats %}
+          <div class="stat">
+            <div class="stat-value">{{ stat.value }}</div>
+            <div class="stat-label">{{ stat.label }}</div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="stat">
+          <div class="stat-value">3+</div>
+          <div class="stat-label">јазици (македонски, германски, англиски)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">12</div>
+          <div class="stat-label">членови на истражувачкиот тим</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">фокус на практична примена</div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}
