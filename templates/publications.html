@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Page hero -->
+<div class="page-hero">
+  <div class="container">
+    <h1>{{ nav.publications }}</h1>
+    <p>
+      {% if lang == 'mk' %}
+        Научни трудови, книги и поглавја во книги на членовите на тимот.
+      {% else %}
+        Research articles, books, and book chapters by project team members.
+      {% endif %}
+    </p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    {% if content and content.items %}
+      <div class="pub-list">
+        {% for pub in content.items %}
+        <div class="pub-card">
+          {% if pub.year %}<span class="pub-card-year">{{ pub.year }}</span>{% endif %}
+          <h3>{{ pub.title }}</h3>
+          {% if pub.authors %}<p class="pub-authors">{{ pub.authors }}</p>{% endif %}
+          {% if pub.journal %}<p class="pub-journal">{{ pub.journal }}</p>{% endif %}
+          {% if pub.doi %}
+          <a href="{{ pub.doi }}" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:10px;font-size:13px;padding:6px 14px;">
+            DOI →
+          </a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+
+    {% else %}
+      <div class="empty-state">
+        <div class="empty-icon">📄</div>
+        <h3>
+          {% if lang == 'mk' %}Публикациите наскоро{% else %}Publications coming soon{% endif %}
+        </h3>
+        <p>
+          {% if lang == 'mk' %}
+            Листата на публикации е во подготовка и наскоро ќе биде достапна.
+          {% else %}
+            The publications list is being prepared and will be available soon.
+          {% endif %}
+        </p>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% endblock %}

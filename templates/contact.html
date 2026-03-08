@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-hero">
+  <div class="container">
+    <h1>{{ nav.contact }}</h1>
+    <p>
+      {% if lang == 'mk' %}
+        Контактирајте не за повеќе информации за проектот.
+      {% else %}
+        Get in touch for more information about the project.
+      {% endif %}
+    </p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Contact info card -->
+      <div class="contact-card">
+        <h3>
+          {% if lang == 'mk' %}Контакт информации{% else %}Contact Information{% endif %}
+        </h3>
+        <div class="contact-info">
+
+          <div class="contact-row">
+            <div class="contact-icon">📍</div>
+            <div>
+              <p class="contact-label">{% if lang == 'mk' %}Адреса{% else %}Address{% endif %}</p>
+              <p class="contact-value">
+                {% if lang == 'mk' %}
+                  Филолошки факултет, УГД – Штип<br>
+                  ул. Крсте Мисирков бр. 10-А<br>
+                  2000 Штип, Северна Македонија
+                {% else %}
+                  Faculty of Philology, UGD – Štip<br>
+                  ul. Krste Misirkov no. 10-A<br>
+                  2000 Štip, North Macedonia
+                {% endif %}
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <p class="contact-label">{% if lang == 'mk' %}Е-пошта{% else %}Email{% endif %}</p>
+              <p class="contact-value">
+                <a href="mailto:biljana.ivanovska@ugd.edu.mk" style="color:var(--primary);text-decoration:none;">
+                  biljana.ivanovska@ugd.edu.mk
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-icon">🌐</div>
+            <div>
+              <p class="contact-label">{% if lang == 'mk' %}Веб{% else %}Website{% endif %}</p>
+              <p class="contact-value">
+                <a href="https://www.ugd.edu.mk" target="_blank" rel="noopener" style="color:var(--primary);text-decoration:none;">
+                  www.ugd.edu.mk
+                </a>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Project card -->
+      <div class="contact-card">
+        <h3>
+          {% if lang == 'mk' %}За проектот{% else %}About the Project{% endif %}
+        </h3>
+        <p style="color:#475569;line-height:1.7;font-size:15px;">
+          {% if lang == 'mk' %}
+            Проектот „Интеркултурна прагматика: современи пристапи во истражувањето и примената во наставата" е финансиран и реализиран при Универзитетот „Гоце Делчев" – Штип, Филолошки факултет.
+          {% else %}
+            The project "Intercultural Pragmatics: Contemporary Research Approaches and Application in Teaching" is funded and carried out at "Goce Delčev" University – Štip, Faculty of Philology.
+          {% endif %}
+        </p>
+        <a href="{{ url_for('about') }}" class="btn btn-primary" style="margin-top:16px;font-size:14px;">
+          {% if lang == 'mk' %}Повеќе за проектот{% else %}More about the project{% endif %} →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

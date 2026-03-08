@@ -1,9 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<div class="page-hero">
+  <div class="container">
+    <h1>{{ nav.gallery }}</h1>
+    <p>
+      {% if lang == 'mk' %}
+        Фотографии од истражувачки активности, конференции и тимски настани.
+      {% else %}
+        Photos from research activities, conferences, and team events.
+      {% endif %}
+    </p>
+  </div>
+</div>
+
   <section class="section">
     <div class="container">
-      <h1 class="section-title">{{ content.title if content.title else 'Галерија' }}</h1>
-      
       {% if content.sections %}
         {% for section in content.sections %}
           <h2>{{ section.title }}</h2>
@@ -19,13 +31,16 @@
           </div>
         {% endfor %}
       {% else %}
-        <!-- Fallback content when no images are available -->
-        <div class="empty-gallery">
-          <h2>Истражувачки активности</h2>
-          <p class="muted">Слики ќе бидат додадени наскоро...</p>
-          
-          <h2>Тимски активности</h2>
-          <p class="muted">Слики ќе бидат додадени наскоро...</p>
+        <div class="empty-state">
+          <div class="empty-icon">🖼️</div>
+          <h3>{% if lang == 'mk' %}Галеријата наскоро{% else %}Gallery coming soon{% endif %}</h3>
+          <p>
+            {% if lang == 'mk' %}
+              Фотографии ќе бидат додадени наскоро.
+            {% else %}
+              Photos will be added soon.
+            {% endif %}
+          </p>
         </div>
       {% endif %}
     </div>

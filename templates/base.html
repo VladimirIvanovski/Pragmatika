@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="mk">
+<html lang="{{ 'mk' if lang == 'mk' else 'en' }}">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ title or 'Интеркултурна Прагматика' }}</title>
+  <title>{{ title or 'Интеркултурна Прагматика' }} — Pragmatika</title>
   <meta name="description" content="Современи пристапи во истражувањето на интеркултурната прагматика и нејзината примена во наставата." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,31 +11,122 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
+
+  <!-- ── Top bar (lang switch) ───────────────────────────────────────── -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span class="topbar-name">
+        {{ footer.university if footer.university else 'Универзитет „Гоце Делчев" – Штип' }} &nbsp;·&nbsp; Faculty of Philology
+      </span>
+      <div class="lang-switcher">
+        <a href="{{ url_for('set_lang', code='mk') }}"
+           class="lang-btn {{ 'lang-btn--active' if lang == 'mk' else '' }}">МКД</a>
+        <span class="lang-sep">|</span>
+        <a href="{{ url_for('set_lang', code='en') }}"
+           class="lang-btn {{ 'lang-btn--active' if lang == 'en' else '' }}">ENG</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Main header / nav ───────────────────────────────────────────── -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="{{ url_for('index') }}">Интеркултурна Прагматика</a>
+      <a class="brand" href="{{ url_for('index') }}">
+        <span class="brand-short">Прагматика</span>
+      </a>
+
+      <!-- Hamburger (mobile) -->
       <button class="nav-toggle" id="navToggle" aria-label="Мени" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
+
       <nav class="nav" id="siteNav" aria-label="Главна навигација">
-        <a class="nav-link {{ 'active' if active_page=='home' else '' }}" href="{{ url_for('index') }}">Почетна</a>
-        <a class="nav-link {{ 'active' if active_page=='about' else '' }}" href="{{ url_for('about') }}">За проектот</a>
-        <a class="nav-link {{ 'active' if active_page=='research' else '' }}" href="{{ url_for('research') }}">Истражување</a>
-        <a class="nav-link {{ 'active' if active_page=='team' else '' }}" href="{{ url_for('team') }}">Тим</a>
-        <a class="nav-link {{ 'active' if active_page=='gallery' else '' }}" href="{{ url_for('gallery') }}">Галерија</a>
-        <a class="nav-link {{ 'active' if active_page=='documents' else '' }}" href="{{ url_for('documents') }}">Документи</a>
+
+        <!-- Home -->
+        <a class="nav-link {{ 'active' if active_page=='home' else '' }}"
+           href="{{ url_for('index') }}">{{ nav.home }}</a>
+
+        <!-- Team dropdown -->
+        <div class="nav-item nav-dropdown {{ 'active' if active_page=='team' else '' }}">
+          <a class="nav-link nav-link--has-drop {{ 'active' if active_page=='team' else '' }}"
+             href="{{ url_for('team') }}">
+            {{ nav.team }}
+            <svg class="drop-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="{{ url_for('team') }}#researchers" class="dropdown-item">{{ nav.researchers }}</a>
+            <a href="{{ url_for('team') }}#young"       class="dropdown-item">{{ nav.young_researchers }}</a>
+          </div>
+        </div>
+
+        <!-- Research dropdown -->
+        <div class="nav-item nav-dropdown {{ 'active' if active_page in ['research','publications','presentations'] else '' }}">
+          <a class="nav-link nav-link--has-drop {{ 'active' if active_page=='research' else '' }}"
+             href="{{ url_for('research') }}">
+            {{ nav.research }}
+            <svg class="drop-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="{{ url_for('about') }}"         class="dropdown-item">{{ nav.project_desc }}</a>
+            <a href="{{ url_for('publications') }}"  class="dropdown-item">{{ nav.publications }}</a>
+            <a href="{{ url_for('presentations') }}" class="dropdown-item">{{ nav.presentations }}</a>
+          </div>
+        </div>
+
+        <a class="nav-link {{ 'active' if active_page=='documents' else '' }}"
+           href="{{ url_for('documents') }}">{{ nav.documents }}</a>
+
+        <a class="nav-link {{ 'active' if active_page=='gallery' else '' }}"
+           href="{{ url_for('gallery') }}">{{ nav.gallery }}</a>
+
+        <a class="nav-link {{ 'active' if active_page=='news' else '' }}"
+           href="{{ url_for('news') }}">{{ nav.news }}</a>
+
+        <a class="nav-link {{ 'active' if active_page=='contact' else '' }}"
+           href="{{ url_for('contact') }}">{{ nav.contact }}</a>
+
       </nav>
     </div>
   </header>
 
+  <!-- ── Page content ────────────────────────────────────────────────── -->
   <main>
     {% block content %}{% endblock %}
   </main>
 
+  <!-- ── Footer ──────────────────────────────────────────────────────── -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="footer-brand">Интеркултурна Прагматика</div>
-      <div class="footer-meta">© 2025 Универзитет „Гоце Делчев“ - Штип</div>
+      <div class="footer-col">
+        <div class="footer-brand">Прагматика</div>
+        <p class="footer-tagline">{{ footer.tagline }}</p>
+      </div>
+      <div class="footer-col footer-links-col">
+        <h4>{{ nav.research }}</h4>
+        <a href="{{ url_for('about') }}">{{ nav.project_desc }}</a>
+        <a href="{{ url_for('publications') }}">{{ nav.publications }}</a>
+        <a href="{{ url_for('presentations') }}">{{ nav.presentations }}</a>
+      </div>
+      <div class="footer-col footer-links-col">
+        <h4>{{ nav.team }}</h4>
+        <a href="{{ url_for('team') }}#researchers">{{ nav.researchers }}</a>
+        <a href="{{ url_for('team') }}#young">{{ nav.young_researchers }}</a>
+      </div>
+      <div class="footer-col footer-links-col">
+        <h4>{{ nav.contact }}</h4>
+        <a href="{{ url_for('news') }}">{{ nav.news }}</a>
+        <a href="{{ url_for('contact') }}">{{ nav.contact }}</a>
+        <a href="{{ url_for('gallery') }}">{{ nav.gallery }}</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        {{ footer.university }} &nbsp;·&nbsp; {{ footer.rights }}
+      </div>
     </div>
   </footer>
 
@@ -43,7 +134,3 @@
   {% block scripts %}{% endblock %}
 </body>
 </html>
-
-
-
-

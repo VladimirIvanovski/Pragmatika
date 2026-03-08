@@ -1,0 +1,50 @@
+{
+  "nav": {
+    "home":               {"mk": "Почетна",          "en": "Home"},
+    "team":               {"mk": "Тим",               "en": "Team"},
+    "researchers":        {"mk": "Истражувачи",       "en": "Researchers"},
+    "young_researchers":  {"mk": "Млади истражувачи", "en": "Young Researchers"},
+    "research":           {"mk": "Истражување",       "en": "Research"},
+    "project_desc":       {"mk": "Опис на проект",    "en": "Project Description"},
+    "publications":       {"mk": "Публикации",        "en": "Publications"},
+    "presentations":      {"mk": "Презентации",       "en": "Presentations"},
+    "documents":          {"mk": "Документи",         "en": "Documents"},
+    "gallery":            {"mk": "Галерија",          "en": "Gallery"},
+    "news":               {"mk": "Вести и настани",   "en": "News & Events"},
+    "contact":            {"mk": "Контакт",           "en": "Contact"}
+  },
+  "common": {
+    "read_more":  {"mk": "Прочитај повеќе", "en": "Read more"},
+    "back":       {"mk": "Назад",           "en": "Back"},
+    "download":   {"mk": "Преземи",         "en": "Download"},
+    "view":       {"mk": "Прегледај",       "en": "View"},
+    "view_cv":    {"mk": "Прегледај CV",    "en": "View CV"},
+    "coming_soon":{"mk": "Наскоро",         "en": "Coming soon"}
+  },
+  "footer": {
+    "tagline": {
+      "mk": "Современи пристапи во истражувањето на интеркултурната прагматика",
+      "en": "Contemporary approaches in intercultural pragmatics research"
+    },
+    "university": {
+      "mk": "Универзитет „Гоце Делчев" – Штип",
+      "en": "\"Goce Delčev\" University – Štip"
+    },
+    "rights": {
+      "mk": "© 2025 Сите права задржани",
+      "en": "© 2025 All rights reserved"
+    }
+  },
+  "pages": {
+    "home":          {"mk": "Почетна",          "en": "Home"},
+    "about":         {"mk": "За проектот",      "en": "About the Project"},
+    "team":          {"mk": "Тим",              "en": "Team"},
+    "research":      {"mk": "Истражување",      "en": "Research"},
+    "publications":  {"mk": "Публикации",       "en": "Publications"},
+    "presentations": {"mk": "Презентации",      "en": "Presentations"},
+    "gallery":       {"mk": "Галерија",         "en": "Gallery"},
+    "news":          {"mk": "Вести и настани",  "en": "News & Events"},
+    "documents":     {"mk": "Документи",        "en": "Documents"},
+    "contact":       {"mk": "Контакт",          "en": "Contact"}
+  }
+}

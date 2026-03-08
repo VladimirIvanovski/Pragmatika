@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-hero">
+  <div class="container">
+    <h1>{{ nav.news }}</h1>
+    <p>
+      {% if lang == 'mk' %}
+        Вести, настани и активности поврзани со проектот.
+      {% else %}
+        News, events, and activities related to the project.
+      {% endif %}
+    </p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    {% if content and content.items %}
+      <div class="news-list">
+        {% for item in content.items %}
+        <div class="news-card">
+          <div style="flex:1">
+            {% if item.date %}<div class="news-date">📅 {{ item.date }}</div>{% endif %}
+            <h3>{{ item.title }}</h3>
+            {% if item.body %}<p>{{ item.body }}</p>{% endif %}
+            {% if item.link %}
+            <a href="{{ item.link }}" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:10px;font-size:13px;padding:6px 14px;">
+              {% if lang == 'mk' %}Прочитај{% else %}Read more{% endif %} →
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    {% else %}
+      <div class="empty-state">
+        <div class="empty-icon">📰</div>
+        <h3>
+          {% if lang == 'mk' %}Вестите наскоро{% else %}News coming soon{% endif %}
+        </h3>
+        <p>
+          {% if lang == 'mk' %}
+            Следете не наскоро за вести и актуелности поврзани со проектот.
+          {% else %}
+            Stay tuned for news and updates related to the project.
+          {% endif %}
+        </p>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% endblock %}

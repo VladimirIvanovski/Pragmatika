@@ -1,12 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
+
+{# ── Bilingual fallback strings ────────────────────────────── #}
+{% set hero_title = content.hero.title if (content.hero and content.hero.title) else
+    ('Современи пристапи во истражувањето на интеркултурната прагматика' if lang == 'mk'
+     else 'Contemporary Approaches in Intercultural Pragmatics Research') %}
+{% set hero_subtitle = content.hero.subtitle if (content.hero and content.hero.subtitle) else
+    ('Од научни концепти до практична реализација' if lang == 'mk'
+     else 'From scientific concepts to practical application') %}
+
   <section class="hero">
     <div class="container hero-inner">
-      <h1 class="hero-title">{{ content.hero.title if content.hero else 'Современи пристапи во истражувањето на интеркултурната прагматика и нејзината примена во наставата' }}</h1>
-      <p class="hero-subtitle">{{ content.hero.subtitle if content.hero else 'Од научни концепти до практична реализација' }}</p>
+      <h1 class="hero-title">{{ hero_title }}</h1>
+      <p class="hero-subtitle">{{ hero_subtitle }}</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="{{ url_for('research') }}">Истражување</a>
-        <a class="btn btn-ghost" href="{{ url_for('team') }}">Запознај го тимот</a>
+        <a class="btn btn-primary" href="{{ url_for('research') }}">
+          {{ nav.research }}
+        </a>
+        <a class="btn btn-ghost" href="{{ url_for('team') }}">
+          {% if lang == 'mk' %}Запознај го тимот{% else %}Meet the team{% endif %}
+        </a>
       </div>
     </div>
     <div class="hero-bg" aria-hidden="true"></div>
@@ -22,6 +35,19 @@
               <p>{{ feature.description }}</p>
             </div>
           {% endfor %}
+        {% elif lang == 'en' %}
+          <div class="card">
+            <h3>Objectives</h3>
+            <p>Research into contemporary approaches to intercultural pragmatics and their application in foreign language teaching.</p>
+          </div>
+          <div class="card">
+            <h3>Methodology</h3>
+            <p>Analysis of communication strategies, politeness, and speech acts through comparative studies across different language and cultural systems.</p>
+          </div>
+          <div class="card">
+            <h3>Application</h3>
+            <p>Developing teaching models for intercultural pragmatic competence in learners and students.</p>
+          </div>
         {% else %}
           <div class="card">
             <h3>Цели</h3>
@@ -49,20 +75,16 @@
             <div class="stat-label">{{ stat.label }}</div>
           </div>
         {% endfor %}
+      {% elif lang == 'en' %}
+        <div class="stat"><div class="stat-value">3+</div><div class="stat-label">Languages (Macedonian, German, English)</div></div>
+        <div class="stat"><div class="stat-value">14</div><div class="stat-label">Research team members</div></div>
+        <div class="stat"><div class="stat-value">100%</div><div class="stat-label">Focus on practical application</div></div>
       {% else %}
-        <div class="stat">
-          <div class="stat-value">3+</div>
-          <div class="stat-label">јазици (македонски, германски, англиски)</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">12</div>
-          <div class="stat-label">членови на истражувачкиот тим</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">100%</div>
-          <div class="stat-label">фокус на практична примена</div>
-        </div>
+        <div class="stat"><div class="stat-value">3+</div><div class="stat-label">Јазици (македонски, германски, англиски)</div></div>
+        <div class="stat"><div class="stat-value">14</div><div class="stat-label">Членови на истражувачкиот тим</div></div>
+        <div class="stat"><div class="stat-value">100%</div><div class="stat-label">Фокус на практична примена</div></div>
       {% endif %}
     </div>
   </section>
+
 {% endblock %}
