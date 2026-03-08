@@ -1,50 +1,177 @@
 {% extends 'base.html' %}
 {% block content %}
-  <section class="section">
-    <div class="container">
-      <h1 class="section-title">{{ content.title if content.title else 'Тим' }}</h1>
-      <div class="team-grid">
-        {% if content.members %}
-          {% for member in content.members %}
+<section class="section">
+  <div class="container">
+    <h1 class="section-title">{{ content.title if content.title else 'Тим' }}</h1>
+    <div class="team-grid">
+      {% if content.members %}
+        {% for member in content.members %}
+          {% if member.cv %}
+            <div class="team-card team-card--clickable" onclick="openCV()">
+              <div class="team-card-badge">CV</div>
+          {% else %}
             <div class="team-card">
-              {% if member.image %}
-                <img src="{{ member.image }}" alt="{{ member.name }}" class="team-image">
-              {% endif %}
-              <h3>{{ member.name }}</h3>
-              {% if member.role %}
-                <p class="role">{{ member.role }}</p>
-              {% endif %}
-              {% if member.affiliation %}
-                <p class="affiliation">{{ member.affiliation }}</p>
-              {% endif %}
-              {% if member.bio %}
-                <p class="bio">{{ member.bio }}</p>
-              {% endif %}
+          {% endif %}
+
+          {% if member.image %}
+            <img src="{{ member.image }}" alt="{{ member.name }}" class="team-image">
+          {% else %}
+            <div class="team-avatar">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
             </div>
-          {% endfor %}
-        {% else %}
-          <!-- Fallback content -->
-          <div class="team-card">
-            <h3>проф. д-р Билјана Ивановска</h3>
-            <p class="role">Главен истражувач и носител на проектот</p>
-            <p class="affiliation">УГД-Штип</p>
+          {% endif %}
+
+          <h3>{{ member.name }}</h3>
+          {% if member.role %}<p class="role">{{ member.role }}</p>{% endif %}
+          {% if member.affiliation %}<p class="affiliation">{{ member.affiliation }}</p>{% endif %}
+          {% if member.bio %}<p class="bio">{{ member.bio }}</p>{% endif %}
+
+          {% if member.cv %}
+            <div class="team-card-cta">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              Прегледај CV
+            </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="team-card"><h3>проф. д-р Билјана Ивановска</h3><p class="role">Главен истражувач</p><p class="affiliation">УГД-Штип</p></div>
+        <div class="team-card"><h3>проф. д-р Ева Ѓеорѓиевска</h3><p class="affiliation">УГД-Штип</p></div>
+        <div class="team-card"><h3>проф. д-р Натка Јанкова-Алаѓозовска</h3><p class="affiliation">УГД-Штип</p></div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- ── CV Modal ─────────────────────────────────────────────── -->
+{% if content.members %}
+  {% for member in content.members %}
+    {% if member.cv %}
+    <div class="cv-overlay" id="cvOverlay" onclick="closeCV(event)">
+      <div class="cv-modal">
+
+        <!-- Header -->
+        <div class="cv-modal-header">
+          <div class="cv-header-left">
+            {% if member.image %}
+              <img src="{{ member.image }}" alt="{{ member.name }}" class="cv-avatar">
+            {% else %}
+              <div class="cv-avatar cv-avatar--placeholder">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+            {% endif %}
+            <div class="cv-header-text">
+              <h2 class="cv-name" id="cvName">{{ member.cv.mk.title }}</h2>
+              <p class="cv-subtitle" id="cvSubtitle">{{ member.cv.mk.subtitle }}</p>
+            </div>
           </div>
 
-          <div class="team-card"><h3>проф. д-р Ева Ѓеорѓиевска</h3><p class="affiliation">УГД-Штип</p></div>
-          <div class="team-card"><h3>проф. д-р Натка Јанкова-Алаѓозовска</h3><p class="affiliation">УГД-Штип</p></div>
-          <div class="team-card"><h3>проф. д-р Брикена Џафери</h3><p class="affiliation">УЈИЕ</p></div>
-          <div class="team-card"><h3>проф. д-р Гзим Џафери</h3><p class="affiliation">УЈИЕ</p></div>
-          <div class="team-card"><h3>доц. д-р Ана Коцева</h3><p class="affiliation">УГД-Штип</p></div>
-          <div class="team-card"><h3>доц. д-р Симона Серафимовска</h3><p class="affiliation">УГД-Штип</p></div>
-          <div class="team-card"><h3>доц. д-р Сашка Јовановска</h3><p class="affiliation">УГД-Штип</p></div>
-          <div class="team-card"><h3>доц. д-р Марија Гркова</h3><p class="affiliation">УГД-Штип</p></div>
-          <div class="team-card"><h3>доц. д-р Марија Соколова</h3><p class="affiliation">УГД-Штип</p></div>
-          <div class="team-card"><h3>виш лектор Марица Тасевска</h3><p class="affiliation">УГД-Штип</p></div>
-          <div class="team-card"><h3>Александра Митева</h3><p class="role">млад истражувач</p></div>
-          <div class="team-card"><h3>Катерина Харбова</h3><p class="role">млад истражувач</p></div>
-          <div class="team-card"><h3>Владимир Ивановски</h3><p class="role">млад истражувач</p></div>
-        {% endif %}
+          <!-- Language Toggle -->
+          <div class="cv-lang-toggle">
+            <button class="cv-lang-btn active" id="btnMK" onclick="switchLang('mk')">МКД</button>
+            <button class="cv-lang-btn" id="btnEN" onclick="switchLang('en')">ENG</button>
+          </div>
+
+          <button class="cv-close" onclick="closeCV(null, true)" aria-label="Close">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Body -->
+        <div class="cv-modal-body">
+          <p class="cv-body-text" id="cvBody">{{ member.cv.mk.body }}</p>
+
+          <div class="cv-sections">
+            <!-- Research Interests -->
+            <div class="cv-section">
+              <h4 class="cv-section-title" id="cvResearchLabel">{{ member.cv.mk.research_label }}</h4>
+              <ul class="cv-list" id="cvResearchList">
+                {% for item in member.cv.mk.research %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <!-- Teaching -->
+            <div class="cv-section">
+              <h4 class="cv-section-title" id="cvTeachingLabel">{{ member.cv.mk.teaching_label }}</h4>
+              <ul class="cv-list" id="cvTeachingList">
+                {% for item in member.cv.mk.teaching %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </section>
+
+    <!-- Embed CV data as JSON for JS -->
+    <script>
+      const CV_DATA = {{ member.cv | tojson }};
+    </script>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+  function openCV() {
+    document.getElementById('cvOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCV(event, force) {
+    if (force || (event && event.target === document.getElementById('cvOverlay'))) {
+      document.getElementById('cvOverlay').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function switchLang(lang) {
+    const data = CV_DATA[lang];
+
+    // Update text content
+    document.getElementById('cvName').textContent       = data.title;
+    document.getElementById('cvSubtitle').textContent   = data.subtitle;
+    document.getElementById('cvBody').textContent       = data.body;
+    document.getElementById('cvResearchLabel').textContent = data.research_label;
+    document.getElementById('cvTeachingLabel').textContent = data.teaching_label;
+
+    // Update lists
+    function buildList(elId, items) {
+      const el = document.getElementById(elId);
+      el.innerHTML = '';
+      items.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        el.appendChild(li);
+      });
+    }
+    buildList('cvResearchList', data.research);
+    buildList('cvTeachingList', data.teaching);
+
+    // Toggle button active state
+    document.getElementById('btnMK').classList.toggle('active', lang === 'mk');
+    document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeCV(null, true);
+  });
+</script>
 {% endblock %}

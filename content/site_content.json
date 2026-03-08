@@ -118,7 +118,53 @@
         "role": "Главен истражувач и носител на проектот",
         "affiliation": "УГД-Штип",
         "image": "/static/img/team/biljana-ivanovska.svg",
-        "bio": "Експерт во областа на интеркултурната прагматика и наставата на странски јазици."
+        "bio": "Експерт во областа на интеркултурната прагматика и наставата на странски јазици.",
+        "cv": {
+          "mk": {
+            "title": "проф. д-р Билјана Ивановска",
+            "subtitle": "Редовен професор | Филолошки факултет, УГД – Штип",
+            "body": "Билјана Ивановска е редовен професор и раководител на Катедрата за германски јазик и книжевност на Филолошкиот факултет при Универзитетот „Гоце Делчев" – Штип, Северна Македонија. Таа предава предмети од областа на контрастивна лингвистика, морфологија, фонетика, германски како странски јазик и прагматика. Учествувала на бројни конференции, семинари и симпозиуми во земјата и во странство и има објавено повеќе трудови во национални и меѓународни научни списанија. Нејзините истражувачки интереси вклучуваат: контрастивна анализа, прагматика, германска лингвистика, интеркултурна комуникација, дискурсна анализа, како и теми од областа на усвојувањето на германскиот како странски јазик.",
+            "research_label": "Истражувачки интереси",
+            "research": [
+              "Контрастивна анализа",
+              "Прагматика",
+              "Германска лингвистика",
+              "Интеркултурна комуникација",
+              "Дискурсна анализа",
+              "Усвојување на германскиот како странски јазик"
+            ],
+            "teaching_label": "Предмети",
+            "teaching": [
+              "Контрастивна лингвистика",
+              "Морфологија",
+              "Фонетика",
+              "Германски како странски јазик",
+              "Прагматика"
+            ]
+          },
+          "en": {
+            "title": "Prof. Dr. Biljana Ivanovska",
+            "subtitle": "Full Professor | Faculty of Philology, UGD – Štip",
+            "body": "Biljana Ivanovska is a Full Professor and Head of the Department of German Language and Literature at the Faculty of Philology, \"Goce Delčev\" University, Štip, North Macedonia. She teaches courses in Contrastive Linguistics, Morphology, Phonetics, German as a Foreign Language, and Pragmatics. She has participated in numerous conferences, seminars, and symposiums both domestically and internationally, and has published multiple articles in national and international academic journals. Her research focuses include contrastive analysis, pragmatics, German linguistics, intercultural communication, discourse analysis, as well as topics in the field of German as a Foreign Language acquisition.",
+            "research_label": "Research Interests",
+            "research": [
+              "Contrastive Analysis",
+              "Pragmatics",
+              "German Linguistics",
+              "Intercultural Communication",
+              "Discourse Analysis",
+              "German as a Foreign Language acquisition"
+            ],
+            "teaching_label": "Courses Taught",
+            "teaching": [
+              "Contrastive Linguistics",
+              "Morphology",
+              "Phonetics",
+              "German as a Foreign Language",
+              "Pragmatics"
+            ]
+          }
+        }
       },
       {
         "name": "проф. д-р Ева Ѓеорѓиевска",
