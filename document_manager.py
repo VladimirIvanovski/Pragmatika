@@ -30,9 +30,78 @@ try:
 except ImportError:
     PIL_AVAILABLE = False
 
+try:
+    import cloudinary
+    import cloudinary.uploader
+    CLOUDINARY_AVAILABLE = True
+except ImportError:
+    CLOUDINARY_AVAILABLE = False
+
 DOCUMENTS_DIR = 'documents'
 METADATA_FILE = 'content/documents_metadata.json'
 EXTRACTED_IMAGES_DIR = 'static/extracted_images'
+CLOUDINARY_CACHE_FILE = 'content/cloudinary_cache.json'
+
+# ── Cloudinary setup ───────────────────────────────────────────────────────
+_CLOUD_NAME = os.environ.get('CLOUDINARY_CLOUD_NAME')
+_CLOUD_KEY   = os.environ.get('CLOUDINARY_API_KEY')
+_CLOUD_SEC   = os.environ.get('CLOUDINARY_API_SECRET')
+USE_CLOUDINARY = CLOUDINARY_AVAILABLE and all([_CLOUD_NAME, _CLOUD_KEY, _CLOUD_SEC])
+
+if USE_CLOUDINARY:
+    cloudinary.config(cloud_name=_CLOUD_NAME, api_key=_CLOUD_KEY, api_secret=_CLOUD_SEC)
+
+def _load_cloudinary_cache() -> Dict[str, str]:
+    """Load hash→URL cache from disk."""
+    if os.path.exists(CLOUDINARY_CACHE_FILE):
+        try:
+            with open(CLOUDINARY_CACHE_FILE, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {}
+
+def _save_cloudinary_cache(cache: Dict[str, str]) -> None:
+    os.makedirs(os.path.dirname(CLOUDINARY_CACHE_FILE), exist_ok=True)
+    with open(CLOUDINARY_CACHE_FILE, 'w', encoding='utf-8') as f:
+        json.dump(cache, f, indent=2)
+
+def _store_image(image_bytes: bytes, public_id_hint: str) -> str:
+    """Store image bytes. Returns a URL (Cloudinary) or local path.
+    
+    Uses the MD5 hash as the Cloudinary public_id for deduplication.
+    Falls back to local disk when Cloudinary is not configured.
+    """
+    file_hash = hashlib.md5(image_bytes).hexdigest()
+
+    if USE_CLOUDINARY:
+        cache = _load_cloudinary_cache()
+        if file_hash in cache:
+            return cache[file_hash]
+        try:
+            result = cloudinary.uploader.upload(
+                image_bytes,
+                public_id=f'pragmatika/{file_hash}',
+                overwrite=False,
+                resource_type='image',
+                format='webp',
+            )
+            url = result['secure_url']
+            cache[file_hash] = url
+            _save_cloudinary_cache(cache)
+            return url
+        except Exception as e:
+            print(f'Cloudinary upload failed: {e}')
+
+    # Local fallback
+    short_hash = file_hash[:8]
+    clean_hint = "".join(c for c in public_id_hint if c.isalnum() or c in (' ', '-', '_')).strip()
+    image_filename = f'{clean_hint}_{short_hash}.png'
+    image_path = os.path.join(EXTRACTED_IMAGES_DIR, image_filename)
+    os.makedirs(EXTRACTED_IMAGES_DIR, exist_ok=True)
+    with open(image_path, 'wb') as f:
+        f.write(image_bytes)
+    return f'/static/extracted_images/{image_filename}'
 
 def ensure_documents_dir():
     """Ensure documents directory exists"""
@@ -279,28 +348,14 @@ def extract_docx_content(file_path: str) -> Dict[str, Any]:
         
         # Extract images
         image_index = 0
+        filename_base = os.path.splitext(os.path.basename(file_path))[0]
         for rel in doc.part.rels.values():
             if "image" in rel.target_ref:
                 try:
-                    image_part = rel.target_part
-                    image_bytes = image_part.blob
-                    
-                    # Generate unique filename
-                    file_hash = hashlib.md5(image_bytes).hexdigest()[:8]
-                    filename_base = os.path.splitext(os.path.basename(file_path))[0]
-                    # Clean filename base (remove special chars)
-                    filename_base = "".join(c for c in filename_base if c.isalnum() or c in (' ', '-', '_')).strip()
-                    image_filename = f"{filename_base}_{image_index}_{file_hash}.png"
-                    image_path = os.path.join(EXTRACTED_IMAGES_DIR, image_filename)
-                    
-                    # Save image
-                    with open(image_path, 'wb') as f:
-                        f.write(image_bytes)
-                    
-                    content['images'].append({
-                        'path': f'/static/extracted_images/{image_filename}',
-                        'index': image_index
-                    })
+                    image_bytes = rel.target_part.blob
+                    hint = f'{filename_base}_{image_index}'
+                    url = _store_image(image_bytes, hint)
+                    content['images'].append({'path': url, 'index': image_index})
                     image_index += 1
                 except Exception as e:
                     print(f"Error extracting image: {e}")
@@ -360,27 +415,18 @@ def extract_pptx_content(file_path: str) -> Dict[str, Any]:
                     except:
                         pass
                 
-                # Save image if found
+                # Store image if found
                 if image_extracted:
                     try:
-                        # Generate unique filename
-                        file_hash = hashlib.md5(image_bytes).hexdigest()[:8]
                         filename_base = os.path.splitext(os.path.basename(file_path))[0]
-                        # Clean filename base (remove special chars)
-                        filename_base = "".join(c for c in filename_base if c.isalnum() or c in (' ', '-', '_')).strip()
-                        image_filename = f"{filename_base}_slide{slide_index}_img{len(slide_content['images'])}_{file_hash}.png"
-                        image_path = os.path.join(EXTRACTED_IMAGES_DIR, image_filename)
-                        
-                        # Save image
-                        with open(image_path, 'wb') as f:
-                            f.write(image_bytes)
-                        
+                        hint = f'{filename_base}_slide{slide_index}_img{len(slide_content["images"])}'
+                        url = _store_image(image_bytes, hint)
                         slide_content['images'].append({
-                            'path': f'/static/extracted_images/{image_filename}',
+                            'path': url,
                             'alt': f'Slide {slide_index + 1} image {len(slide_content["images"]) + 1}'
                         })
                     except Exception as e:
-                        print(f"Error saving image from slide {slide_index}: {e}")
+                        print(f"Error storing image from slide {slide_index}: {e}")
                         continue
             
             if slide_content['texts'] or slide_content['images']:
