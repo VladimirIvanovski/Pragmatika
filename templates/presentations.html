@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-hero">
+  <div class="container">
+    <h1>{{ nav.presentations }}</h1>
+    <p>{{ copy.pres_intro }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    {% if content and content.items %}
+      <div class="pub-list">
+        {% for pres in content.items %}
+        <div class="pub-card">
+          {% if pres.year %}<span class="pub-card-year">{{ pres.year }}</span>{% endif %}
+          {% if pres.event %}
+          <span class="pub-card-year" style="background:#f0fdf4;color:#15803d;margin-left:6px;">{{ pres.event }}</span>
+          {% endif %}
+          <h3>{{ pres.title }}</h3>
+          {% if pres.authors %}<p class="pub-authors">{{ pres.authors }}</p>{% endif %}
+          {% if pres.venue  %}<p class="pub-journal">{{ pres.venue }}</p>{% endif %}
+        </div>
+        {% endfor %}
+      </div>
+
+    {% else %}
+      <div class="empty-state">
+        <div class="empty-icon">🎤</div>
+        <h3>{{ copy.pres_coming }}</h3>
+        <p>{{ copy.pres_preparing }}</p>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% endblock %}

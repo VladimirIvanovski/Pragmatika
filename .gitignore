@@ -43,6 +43,9 @@ Thumbs.db
 # documents/
 # content/documents_metadata.json
 
+# Auto-generated extracted images from documents
+static/extracted_images/
+
 # Environment variables
 .env
 .env.local

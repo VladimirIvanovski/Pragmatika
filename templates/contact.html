@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-hero">
+  <div class="container">
+    <h1>{{ nav.contact }}</h1>
+    <p>{{ copy.contact_intro }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Contact info card -->
+      <div class="contact-card">
+        <h3>
+          {% if lang == 'mk' %}Контакт информации{% else %}Contact Information{% endif %}
+        </h3>
+        <div class="contact-info">
+
+          <div class="contact-row">
+            <div class="contact-icon">📍</div>
+            <div>
+              <p class="contact-label">{{ copy.address }}</p>
+              <p class="contact-value">{{ copy.address_value|safe }}</p>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <p class="contact-label">{{ copy.email }}</p>
+              <p class="contact-value">
+                <a href="mailto:biljana.ivanovska@ugd.edu.mk" style="color:var(--primary);text-decoration:none;">
+                  biljana.ivanovska@ugd.edu.mk
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-icon">🌐</div>
+            <div>
+              <p class="contact-label">{{ copy.website }}</p>
+              <p class="contact-value">
+                <a href="https://www.ugd.edu.mk" target="_blank" rel="noopener" style="color:var(--primary);text-decoration:none;">
+                  www.ugd.edu.mk
+                </a>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Project card -->
+      <div class="contact-card">
+        <h3>{{ copy.about_project }}</h3>
+        <p style="color:#475569;line-height:1.7;font-size:15px;">{{ copy.contact_about_text }}</p>
+        <a href="{{ url_for('about') }}" class="btn btn-primary" style="margin-top:16px;font-size:14px;">
+          {{ copy.more_about }} →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

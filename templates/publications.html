@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Page hero -->
+<div class="page-hero">
+  <div class="container">
+    <h1>{{ nav.publications }}</h1>
+    <p>{{ copy.pub_intro }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    {% if content and content.items %}
+      <div class="pub-list">
+        {% for pub in content.items %}
+        <div class="pub-card">
+          {% if pub.year %}<span class="pub-card-year">{{ pub.year }}</span>{% endif %}
+          <h3>{{ pub.title }}</h3>
+          {% if pub.authors %}<p class="pub-authors">{{ pub.authors }}</p>{% endif %}
+          {% if pub.journal %}<p class="pub-journal">{{ pub.journal }}</p>{% endif %}
+          {% if pub.doi %}
+          <a href="{{ pub.doi }}" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:10px;font-size:13px;padding:6px 14px;">
+            DOI →
+          </a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+
+    {% else %}
+      <div class="empty-state">
+        <div class="empty-icon">📄</div>
+        <h3>{{ copy.pub_coming }}</h3>
+        <p>{{ copy.pub_preparing }}</p>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% endblock %}

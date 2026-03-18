@@ -5,6 +5,7 @@ Handles scanning, processing, and metadata extraction from documents
 """
 
 import os
+import re
 import json
 from typing import Dict, List, Any, Optional
 from datetime import datetime
@@ -84,7 +85,7 @@ def get_file_metadata(file_path: str) -> Dict[str, Any]:
     return metadata
 
 def scan_documents() -> List[Dict[str, Any]]:
-    """Scan documents directory and return list of all documents with metadata"""
+    """Scan documents directory recursively and return list of all documents with metadata"""
     ensure_documents_dir()
     documents = []
     
@@ -93,21 +94,105 @@ def scan_documents() -> List[Dict[str, Any]]:
     
     supported_extensions = ['.pdf', '.docx', '.pptx', '.doc', '.ppt']
     
-    for file_name in os.listdir(DOCUMENTS_DIR):
-        file_path = os.path.join(DOCUMENTS_DIR, file_name)
-        if os.path.isfile(file_path):
+    for root, _dirs, files in os.walk(DOCUMENTS_DIR):
+        rel_root = os.path.relpath(root, DOCUMENTS_DIR)
+        folder = '' if rel_root == '.' else rel_root.split(os.sep)[0]
+        
+        for file_name in files:
             file_ext = os.path.splitext(file_name)[1].lower()
             if file_ext in supported_extensions:
+                file_path = os.path.join(root, file_name)
                 try:
                     metadata = get_file_metadata(file_path)
+                    metadata['folder'] = folder
+                    if rel_root == '.':
+                        metadata['subfolder_path'] = file_name
+                    else:
+                        metadata['subfolder_path'] = os.path.join(rel_root, file_name).replace(os.sep, '/')
                     documents.append(metadata)
                 except Exception as e:
                     print(f"Error processing {file_name}: {e}")
                     continue
     
-    # Sort by modified date (newest first)
     documents.sort(key=lambda x: x.get('modified', ''), reverse=True)
     return documents
+
+
+def scan_documents_by_folder() -> Dict[str, List[Dict[str, Any]]]:
+    """Return documents grouped by subfolder name.
+    
+    Returns a dict like {'Moduli': [...], 'Conferences': [...], '': [...top-level...]}
+    """
+    grouped: Dict[str, List[Dict[str, Any]]] = {}
+    for doc in scan_documents():
+        folder = doc.get('folder', '')
+        grouped.setdefault(folder, []).append(doc)
+    return grouped
+
+IMAGE_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.gif', '.webp'}
+
+def _natural_sort_key(s: str):
+    """Sort key for 'pic 1', 'pic 2', ... 'pic 10' to order 1,2,...,10."""
+    parts = re.split(r'(\d+)', s.lower())
+    return [int(p) if p.isdigit() else p for p in parts]
+
+def get_conference_subfolder_images(subfolder_name: str) -> List[Dict[str, str]]:
+    """Get image paths from a conference subfolder. Returns URL-safe paths."""
+    from urllib.parse import quote
+    folder_path = os.path.join(DOCUMENTS_DIR, 'Conferences', subfolder_name)
+    if not os.path.isdir(folder_path):
+        return []
+    images = []
+    files = [f for f in os.listdir(folder_path) if os.path.splitext(f)[1].lower() in IMAGE_EXTENSIONS]
+    for f in sorted(files, key=_natural_sort_key):
+        rel = subfolder_name + '/' + f
+        images.append({'path': '/documents/conference-image/' + quote(rel)})
+    return images
+
+def _extract_entry_title(content: dict, fallback: str) -> str:
+    """Pick the best title from doc content: first Heading paragraph, or first non-empty paragraph."""
+    for p in content.get('paragraphs') or []:
+        style = p.get('style') or ''
+        text = p.get('text', '').strip()
+        if text and ('Heading' in style or 'Title' in style):
+            return text[:200]
+    for p in content.get('paragraphs') or []:
+        text = p.get('text', '').strip()
+        if text:
+            return text[:200]
+    return fallback
+
+def get_conference_entries() -> List[Dict[str, Any]]:
+    """Build conference entries: standalone docs + subfolders (doc + folder images)."""
+    entries = []
+    seen_subfolders = set()
+    for doc in scan_documents():
+        if doc.get('folder') != 'Conferences':
+            continue
+        subfolder_path = doc.get('subfolder_path', '')
+        parts = subfolder_path.replace('/', os.sep).split(os.sep)
+        is_subfolder = len(parts) >= 2
+        subfolder = parts[1] if is_subfolder else None
+        if is_subfolder and subfolder and subfolder not in seen_subfolders:
+            seen_subfolders.add(subfolder)
+            content = get_document_content(subfolder_path)
+            if not isinstance(content, dict) or 'error' in content:
+                content = {'paragraphs': [], 'images': [], 'tables': []}
+            folder_images = get_conference_subfolder_images(subfolder)
+            if folder_images:
+                content = dict(content)
+                content['images'] = folder_images + (content.get('images') or [])
+            title = _extract_entry_title(content, subfolder)
+            paras = content.get('paragraphs') or []
+            if paras and paras[0].get('text', '').strip() == title.strip():
+                content = dict(content)
+                content['paragraphs'] = paras[1:]
+            entries.append({'filename': doc['filename'], 'title': title, 'content': content})
+        elif not is_subfolder:
+            content = get_document_content(subfolder_path)
+            title = _extract_entry_title(content, os.path.splitext(doc['filename'])[0]) if isinstance(content, dict) else os.path.splitext(doc['filename'])[0]
+            entries.append({'filename': doc['filename'], 'title': title, 'content': content})
+    return entries
 
 def get_documents_by_type(doc_type: str = None) -> List[Dict[str, Any]]:
     """Get documents filtered by type"""
@@ -145,10 +230,20 @@ def load_metadata() -> Dict[str, Any]:
     return {'last_scan': None, 'total_documents': 0, 'documents': []}
 
 def get_document_path(filename: str) -> Optional[str]:
-    """Get full path to a document by filename"""
-    file_path = os.path.join(DOCUMENTS_DIR, filename)
-    if os.path.exists(file_path):
-        return file_path
+    """Get full path to a document by filename.
+    
+    Accepts a bare filename (backward-compatible) or a subfolder-relative path
+    like 'Moduli/file.pptx'. Falls back to a recursive search when a direct
+    match isn't found.
+    """
+    direct = os.path.join(DOCUMENTS_DIR, filename)
+    if os.path.isfile(direct):
+        return direct
+    
+    target = os.path.basename(filename)
+    for root, _dirs, files in os.walk(DOCUMENTS_DIR):
+        if target in files:
+            return os.path.join(root, target)
     return None
 
 def extract_docx_content(file_path: str) -> Dict[str, Any]:

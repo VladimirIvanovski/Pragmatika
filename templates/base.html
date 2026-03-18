@@ -1,41 +1,155 @@
 <!DOCTYPE html>
-<html lang="mk">
+<html lang="{{ 'mk' if lang == 'mk' else 'en' }}">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ title or 'Интеркултурна Прагматика' }}</title>
-  <meta name="description" content="Современи пристапи во истражувањето на интеркултурната прагматика и нејзината примена во наставата." />
+  <title>{{ title or copy.site_title }} — Pragmatika</title>
+  <meta name="description" content="{{ copy.meta_description }}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
+
+  <!-- ── Top bar (lang switch) ───────────────────────────────────────── -->
+  {% set lang_suffix = '?lang=en' if lang == 'en' else '' %}
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span class="topbar-name">
+        {{ footer.university }} &nbsp;&middot;&nbsp; {{ copy.faculty_philology }}
+      </span>
+      <div class="lang-switcher">
+        <a href="{{ url_for('set_lang', code='mk', next=request.path) }}"
+           class="lang-btn {{ 'lang-btn--active' if lang == 'mk' else '' }}">МКД</a>
+        <span class="lang-sep">|</span>
+        <a href="{{ url_for('set_lang', code='en', next=request.path) }}"
+           class="lang-btn {{ 'lang-btn--active' if lang == 'en' else '' }}">ENG</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Main header / nav ───────────────────────────────────────────── -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="{{ url_for('index') }}">Интеркултурна Прагматика</a>
+      <a class="brand" href="{{ url_for('index') }}{{ lang_suffix }}">
+        <span class="brand-short">Прагматика</span>
+      </a>
+
+      <!-- Hamburger (mobile) -->
       <button class="nav-toggle" id="navToggle" aria-label="Мени" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
+
       <nav class="nav" id="siteNav" aria-label="Главна навигација">
-        <a class="nav-link {{ 'active' if active_page=='home' else '' }}" href="{{ url_for('index') }}">Почетна</a>
-        <a class="nav-link {{ 'active' if active_page=='about' else '' }}" href="{{ url_for('about') }}">За проектот</a>
-        <a class="nav-link {{ 'active' if active_page=='research' else '' }}" href="{{ url_for('research') }}">Истражување</a>
-        <a class="nav-link {{ 'active' if active_page=='team' else '' }}" href="{{ url_for('team') }}">Тим</a>
-        <a class="nav-link {{ 'active' if active_page=='gallery' else '' }}" href="{{ url_for('gallery') }}">Галерија</a>
-        <a class="nav-link {{ 'active' if active_page=='documents' else '' }}" href="{{ url_for('documents') }}">Документи</a>
+
+        <!-- Home -->
+        <a class="nav-link {{ 'active' if active_page=='home' else '' }}"
+           href="{{ url_for('index') }}{{ lang_suffix }}">{{ nav.home }}</a>
+
+        <!-- Team dropdown -->
+        <div class="nav-item nav-dropdown {{ 'active' if active_page=='team' else '' }}">
+          <a class="nav-link nav-link--has-drop {{ 'active' if active_page=='team' else '' }}"
+             href="{{ url_for('team') }}{{ lang_suffix }}">
+            {{ nav.team }}
+            <svg class="drop-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="{{ url_for('team') }}{{ lang_suffix }}#researchers" class="dropdown-item">{{ nav.researchers }}</a>
+            <a href="{{ url_for('team') }}{{ lang_suffix }}#young"       class="dropdown-item">{{ nav.young_researchers }}</a>
+          </div>
+        </div>
+
+        <!-- Research dropdown -->
+        <div class="nav-item nav-dropdown {{ 'active' if active_page in ['research','publications','presentations'] else '' }}">
+          <a class="nav-link nav-link--has-drop {{ 'active' if active_page=='research' else '' }}"
+             href="{{ url_for('research') }}{{ lang_suffix }}">
+            {{ nav.research }}
+            <svg class="drop-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="{{ url_for('about') }}{{ lang_suffix }}"         class="dropdown-item">{{ nav.project_desc }}</a>
+            <a href="{{ url_for('publications') }}{{ lang_suffix }}"  class="dropdown-item">{{ nav.publications }}</a>
+            <a href="{{ url_for('presentations') }}{{ lang_suffix }}" class="dropdown-item">{{ nav.presentations }}</a>
+          </div>
+        </div>
+
+        <div class="nav-item nav-dropdown {{ 'active' if active_page=='documents' else '' }}">
+          <a class="nav-link nav-link--has-drop {{ 'active' if active_page=='documents' else '' }}"
+             href="{{ url_for('documents') }}{{ lang_suffix }}">
+            {{ nav.materials if nav.materials else nav.documents }}
+            <svg class="drop-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="{{ url_for('documents') }}{{ lang_suffix }}#moduli" class="dropdown-item">{{ copy.modules if copy.modules else 'Модули' }}</a>
+            <a href="{{ url_for('documents') }}{{ lang_suffix }}#conferences" class="dropdown-item">{{ copy.conferences_workshops if copy.conferences_workshops else 'Конференции' }}</a>
+          </div>
+        </div>
+
+        <a class="nav-link {{ 'active' if active_page=='gallery' else '' }}"
+           href="{{ url_for('gallery') }}{{ lang_suffix }}">{{ nav.gallery }}</a>
+
+        <div class="nav-item nav-dropdown {{ 'active' if active_page=='news' else '' }}">
+          <a class="nav-link nav-link--has-drop {{ 'active' if active_page=='news' else '' }}"
+             href="{{ url_for('news') }}{{ lang_suffix }}">
+            {{ nav.news }}
+            <svg class="drop-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="{{ url_for('news') }}{{ lang_suffix }}" class="dropdown-item">{{ nav.news }}</a>
+            <a href="{{ url_for('conferences') }}{{ lang_suffix }}" class="dropdown-item">{{ nav.conferences }}</a>
+          </div>
+        </div>
+
+        <a class="nav-link {{ 'active' if active_page=='contact' else '' }}"
+           href="{{ url_for('contact') }}{{ lang_suffix }}">{{ nav.contact }}</a>
+
       </nav>
     </div>
   </header>
 
+  <!-- ── Page content ────────────────────────────────────────────────── -->
   <main>
     {% block content %}{% endblock %}
   </main>
 
+  <!-- ── Footer ──────────────────────────────────────────────────────── -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="footer-brand">Интеркултурна Прагматика</div>
-      <div class="footer-meta">© 2025 Универзитет „Гоце Делчев“ - Штип</div>
+      <div class="footer-col">
+        <div class="footer-brand">Прагматика</div>
+        <p class="footer-tagline">{{ footer.tagline }}</p>
+      </div>
+      <div class="footer-col footer-links-col">
+        <h4>{{ nav.research }}</h4>
+        <a href="{{ url_for('about') }}{{ lang_suffix }}">{{ nav.project_desc }}</a>
+        <a href="{{ url_for('publications') }}{{ lang_suffix }}">{{ nav.publications }}</a>
+        <a href="{{ url_for('presentations') }}{{ lang_suffix }}">{{ nav.presentations }}</a>
+      </div>
+      <div class="footer-col footer-links-col">
+        <h4>{{ nav.team }}</h4>
+        <a href="{{ url_for('team') }}{{ lang_suffix }}#researchers">{{ nav.researchers }}</a>
+        <a href="{{ url_for('team') }}{{ lang_suffix }}#young">{{ nav.young_researchers }}</a>
+      </div>
+      <div class="footer-col footer-links-col">
+        <h4>{{ nav.contact }}</h4>
+        <a href="{{ url_for('news') }}{{ lang_suffix }}">{{ nav.news }}</a>
+        <a href="{{ url_for('contact') }}{{ lang_suffix }}">{{ nav.contact }}</a>
+        <a href="{{ url_for('gallery') }}{{ lang_suffix }}">{{ nav.gallery }}</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        {{ footer.university }} &nbsp;·&nbsp; {{ footer.rights }}
+      </div>
     </div>
   </footer>
 
@@ -43,7 +157,3 @@
   {% block scripts %}{% endblock %}
 </body>
 </html>
-
-
-
-

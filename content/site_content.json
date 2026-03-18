@@ -1,4 +1,35 @@
 {
+  "home_vlings": {
+    "project_description": {
+      "mk": "Современата наставна практика во странските јазици се соочува со сè поголема потреба за вклучување на интеркултурната прагматичка компетенција како клучен елемент во образованието. Прагматиката, која се фокусира на изучувањето на употребата на јазикот во конкретни комуникациски контексти, одговара на прашањето како говорителите во различни култури ги манифестираат своите интеракции и кои се стратегиите што ги користат за да ја изразат својата намера на начин што е културно соодветен и прифатлив. Истражувањата покажуваат дека меѓукултурните разлики имаат длабоко влијание на комуникациските стратегии, феноменот на учтивоста и интерпретацијата на говорните чинови. Овој проект има за цел да ги истражи современите пристапи во интеркултурната прагматика и нивната примена во наставата по германски и англиски јазик како странски.",
+      "en": "Contemporary foreign language teaching increasingly demands the integration of intercultural pragmatic competence as a key element in education. Pragmatics, which focuses on language use in specific communicative contexts, addresses how speakers from different cultures shape their interactions and what strategies they use to express their intentions in culturally appropriate ways. Research shows that intercultural differences have a profound influence on communication strategies, politeness phenomena, and speech act interpretation. This project aims to investigate contemporary approaches to intercultural pragmatics and their application in teaching German and English as foreign languages."
+    },
+    "aims": {
+      "mk": [
+        "Истражување на современите пристапи во интеркултурната прагматика.",
+        "Примена на научните концепти во наставата по германски и англиски јазик како странски.",
+        "Споредбена анализа со изворни говорители на германски, англиски и македонски јазик.",
+        "Развој на наставни модели за развој на прагматичка компетенција.",
+        "Објави, работилници и јавни презентации на резултатите."
+      ],
+      "en": [
+        "Research into contemporary approaches to intercultural pragmatics.",
+        "Application of scientific concepts in German and English as foreign language teaching.",
+        "Comparative analysis with native speakers of German, English, and Macedonian.",
+        "Developing teaching models for pragmatic competence.",
+        "Publications, workshops, and public presentations of results."
+      ]
+    },
+    "partner_institutions": [
+      {"name_mk": "Универзитет „Гоце Делчев“ – Штип, Филолошки факултет", "name_en": "Goce Delčev University – Štip, Faculty of Philology", "url": "https://www.ugd.edu.mk"},
+      {"name_mk": "Универзитет на Југоисточна Европа – Тетово", "name_en": "South East European University – Tetovo", "url": "https://www.seeu.edu.mk"},
+      {"name_mk": "СУ „Јане Сандански“ – Струмица", "name_en": "Jane Sandanski Secondary School – Strumica", "url": null}
+    ],
+    "funding": {
+      "mk": "Проектот е финансиран и реализиран при Универзитетот „Гоце Делчев“ – Штип, Филолошки факултет.",
+      "en": "The project is funded and carried out at Goce Delčev University – Štip, Faculty of Philology."
+    }
+  },
   "home": {
     "hero": {
       "title": "Современи пристапи во истражувањето на интеркултурната прагматика и нејзината примена во наставата",
@@ -111,149 +142,311 @@
     ]
   },
   "team": {
-    "title": "Тим",
+    "title": "\u0422\u0438\u043c",
     "members": [
       {
-        "name": "проф. д-р Билјана Ивановска",
-        "role": "Главен истражувач и носител на проектот",
-        "affiliation": "УГД-Штип",
-        "image": "/static/img/team/biljana-ivanovska.svg",
-        "bio": "Експерт во областа на интеркултурната прагматика и наставата на странски јазици.",
+        "name": "\u043f\u0440\u043e\u0444. \u0434-\u0440 \u0411\u0438\u0459\u0430\u043d\u0430 \u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0430",
+        "role": "\u0413\u043b\u0430\u0432\u0435\u043d \u0438\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447 \u0438 \u043d\u043e\u0441\u0438\u0442\u0435\u043b \u043d\u0430 \u043f\u0440\u043e\u0435\u043a\u0442\u043e\u0442",
+        "affiliation": "\u0423\u0413\u0414-\u0428\u0442\u0438\u043f",
+        "image": null,
+        "bio": null,
         "cv": {
           "mk": {
-            "title": "проф. д-р Билјана Ивановска",
-            "subtitle": "Редовен професор | Филолошки факултет, УГД – Штип",
-            "body": "Билјана Ивановска е редовен професор и раководител на Катедрата за германски јазик и книжевност на Филолошкиот факултет при Универзитетот „Гоце Делчев" – Штип, Северна Македонија. Таа предава предмети од областа на контрастивна лингвистика, морфологија, фонетика, германски како странски јазик и прагматика. Учествувала на бројни конференции, семинари и симпозиуми во земјата и во странство и има објавено повеќе трудови во национални и меѓународни научни списанија. Нејзините истражувачки интереси вклучуваат: контрастивна анализа, прагматика, германска лингвистика, интеркултурна комуникација, дискурсна анализа, како и теми од областа на усвојувањето на германскиот како странски јазик.",
-            "research_label": "Истражувачки интереси",
-            "research": [
-              "Контрастивна анализа",
-              "Прагматика",
-              "Германска лингвистика",
-              "Интеркултурна комуникација",
-              "Дискурсна анализа",
-              "Усвојување на германскиот како странски јазик"
-            ],
-            "teaching_label": "Предмети",
-            "teaching": [
-              "Контрастивна лингвистика",
-              "Морфологија",
-              "Фонетика",
-              "Германски како странски јазик",
-              "Прагматика"
-            ]
+            "title": "\u043f\u0440\u043e\u0444. \u0434-\u0440 \u0411\u0438\u0459\u0430\u043d\u0430 \u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0430",
+            "subtitle": "\u0420\u0435\u0434\u043e\u0432\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 | \u0424\u0438\u043b\u043e\u043b\u043e\u0448\u043a\u0438 \u0444\u0430\u043a\u0443\u043b\u0442\u0435\u0442, \u0423\u0413\u0414 \u2013 \u0428\u0442\u0438\u043f",
+            "body": "\u0411\u0438\u0459\u0430\u043d\u0430 \u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0430 \u0435 \u0440\u0435\u0434\u043e\u0432\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 \u0438 \u0440\u0430\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b \u043d\u0430 \u041a\u0430\u0442\u0435\u0434\u0440\u0430\u0442\u0430 \u0437\u0430 \u0433\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u0438 \u043a\u043d\u0438\u0436\u0435\u0432\u043d\u043e\u0441\u0442 \u043d\u0430 \u0424\u0438\u043b\u043e\u043b\u043e\u0448\u043a\u0438\u043e\u0442 \u0444\u0430\u043a\u0443\u043b\u0442\u0435\u0442 \u043f\u0440\u0438 \u0423\u043d\u0438\u0432\u0435\u0440\u0437\u0438\u0442\u0435\u0442\u043e\u0442 \u201e\u0413\u043e\u0446\u0435 \u0414\u0435\u043b\u0447\u0435\u0432\u201c \u2013 \u0428\u0442\u0438\u043f, \u0421\u0435\u0432\u0435\u0440\u043d\u0430 \u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430. \u0422\u0430\u0430 \u043f\u0440\u0435\u0434\u0430\u0432\u0430 \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u0438 \u043e\u0434 \u043e\u0431\u043b\u0430\u0441\u0442\u0430 \u043d\u0430 \u043a\u043e\u043d\u0442\u0440\u0430\u0441\u0442\u0438\u0432\u043d\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430, \u043c\u043e\u0440\u0444\u043e\u043b\u043e\u0433\u0438\u0458\u0430, \u0444\u043e\u043d\u0435\u0442\u0438\u043a\u0430, \u0433\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0438 \u043a\u0430\u043a\u043e \u0441\u0442\u0440\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u0438 \u043f\u0440\u0430\u0433\u043c\u0430\u0442\u0438\u043a\u0430. \u0423\u0447\u0435\u0441\u0442\u0432\u0443\u0432\u0430\u043b\u0430 \u043d\u0430 \u0431\u0440\u043e\u0458\u043d\u0438 \u043a\u043e\u043d\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u0438, \u0441\u0435\u043c\u0438\u043d\u0430\u0440\u0438 \u0438 \u0441\u0438\u043c\u043f\u043e\u0437\u0438\u0443\u043c\u0438 \u0432\u043e \u0437\u0435\u043c\u0458\u0430\u0442\u0430 \u0438 \u0432\u043e \u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u043e \u0438 \u0438\u043c\u0430 \u043e\u0431\u0458\u0430\u0432\u0435\u043d\u043e \u043f\u043e\u0432\u0435\u045c\u0435 \u0442\u0440\u0443\u0434\u043e\u0432\u0438 \u0432\u043e \u043d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u043d\u0438 \u0438 \u043c\u0435\u0453\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u0438 \u043d\u0430\u0443\u0447\u043d\u0438 \u0441\u043f\u0438\u0441\u0430\u043d\u0438\u0458\u0430.",
+            "research_label": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0438",
+            "research": ["\u041a\u043e\u043d\u0442\u0440\u0430\u0441\u0442\u0438\u0432\u043d\u0430 \u0430\u043d\u0430\u043b\u0438\u0437\u0430", "\u041f\u0440\u0430\u0433\u043c\u0430\u0442\u0438\u043a\u0430", "\u0413\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430", "\u0418\u043d\u0442\u0435\u0440\u043a\u0443\u043b\u0442\u0443\u0440\u043d\u0430 \u043a\u043e\u043c\u0443\u043d\u0438\u043a\u0430\u0446\u0438\u0458\u0430", "\u0414\u0438\u0441\u043a\u0443\u0440\u0441\u043d\u0430 \u0430\u043d\u0430\u043b\u0438\u0437\u0430", "\u0423\u0441\u0432\u043e\u0458\u0443\u0432\u0430\u045a\u0435 \u043d\u0430 \u0433\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0438\u043e\u0442 \u043a\u0430\u043a\u043e \u0441\u0442\u0440\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a"]
           },
           "en": {
             "title": "Prof. Dr. Biljana Ivanovska",
-            "subtitle": "Full Professor | Faculty of Philology, UGD – Štip",
-            "body": "Biljana Ivanovska is a Full Professor and Head of the Department of German Language and Literature at the Faculty of Philology, \"Goce Delčev\" University, Štip, North Macedonia. She teaches courses in Contrastive Linguistics, Morphology, Phonetics, German as a Foreign Language, and Pragmatics. She has participated in numerous conferences, seminars, and symposiums both domestically and internationally, and has published multiple articles in national and international academic journals. Her research focuses include contrastive analysis, pragmatics, German linguistics, intercultural communication, discourse analysis, as well as topics in the field of German as a Foreign Language acquisition.",
+            "subtitle": "Full Professor | Faculty of Philology, UGD \u2013 \u0160tip",
+            "body": "Biljana Ivanovska is a Full Professor and Head of the Department of German Language and Literature at the Faculty of Philology, \"Goce Del\u010dev\" University, \u0160tip, North Macedonia. She teaches courses in Contrastive Linguistics, Morphology, Phonetics, German as a Foreign Language, and Pragmatics. She has participated in numerous conferences, seminars, and symposiums both domestically and internationally, and has published multiple articles in national and international academic journals. Her research focuses include contrastive analysis, pragmatics, German linguistics, intercultural communication, discourse analysis, as well as topics in the field of German as a Foreign Language acquisition.",
             "research_label": "Research Interests",
-            "research": [
-              "Contrastive Analysis",
-              "Pragmatics",
-              "German Linguistics",
-              "Intercultural Communication",
-              "Discourse Analysis",
-              "German as a Foreign Language acquisition"
-            ],
-            "teaching_label": "Courses Taught",
-            "teaching": [
-              "Contrastive Linguistics",
-              "Morphology",
-              "Phonetics",
-              "German as a Foreign Language",
-              "Pragmatics"
-            ]
+            "research": ["Contrastive Analysis", "Pragmatics", "German Linguistics", "Intercultural Communication", "Discourse Analysis", "German as a Foreign Language acquisition"]
           }
         }
       },
       {
-        "name": "проф. д-р Ева Ѓеорѓиевска",
-        "role": "Истражувач",
-        "affiliation": "УГД-Штип",
-        "image": "/static/img/team/eva-gjorgjievska.svg",
-        "bio": "Специјалист за германска филологија и компаративна лингвистика."
-      },
-      {
-        "name": "проф. д-р Натка Јанкова-Алаѓозовска",
-        "role": "Истражувач",
-        "affiliation": "УГД-Штип", 
+        "name": "\u043f\u0440\u043e\u0444. \u0434-\u0440 \u0415\u0432\u0430 \u0403\u043e\u0440\u0453\u0438\u0435\u0432\u0441\u043a\u0430",
+        "role": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447",
+        "affiliation": "\u0423\u0413\u0414-\u0428\u0442\u0438\u043f",
         "image": null,
-        "bio": null
+        "bio": null,
+        "cv": {
+          "mk": {
+            "title": "\u043f\u0440\u043e\u0444. \u0434-\u0440 \u0415\u0432\u0430 \u0403\u043e\u0440\u0453\u0438\u0435\u0432\u0441\u043a\u0430",
+            "subtitle": "\u0420\u0435\u0434\u043e\u0432\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 | \u0423\u0413\u0414 \u2013 \u0428\u0442\u0438\u043f",
+            "body": "\u0415\u0432\u0430 \u0403\u043e\u0440\u0453\u0438\u0435\u0432\u0441\u043a\u0430 \u0435 \u0440\u0435\u0434\u043e\u0432\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 \u043f\u043e \u0444\u0440\u0430\u043d\u0446\u0443\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u0438 \u043a\u043e\u043c\u043f\u0430\u0440\u0430\u0442\u0438\u0432\u043d\u0430 \u043a\u043d\u0438\u0436\u0435\u0432\u043d\u043e\u0441\u0442 \u043d\u0430 \u0423\u043d\u0438\u0432\u0435\u0440\u0437\u0438\u0442\u0435\u0442\u043e\u0442 \u201e\u0413\u043e\u0446\u0435 \u0414\u0435\u043b\u0447\u0435\u0432\u201c \u0432\u043e \u0428\u0442\u0438\u043f, \u0421\u0435\u0432\u0435\u0440\u043d\u0430 \u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430. \u0414\u043e\u043a\u0442\u043e\u0440\u0438\u0440\u0430\u043b\u0430 \u043d\u0430 \u0434\u0440\u0436\u0430\u0432\u043d\u0438\u043e\u0442 \u0443\u043d\u0438\u0432\u0435\u0440\u0437\u0438\u0442\u0435\u0442 \u0432\u043e \u041f\u0430\u0440\u0438\u0437, \u0424\u0440\u0430\u043d\u0446\u0438\u0458\u0430, \u043d\u0430 \u0442\u0435\u043c\u0430 \u043e\u0434 \u0444\u0440\u0430\u043d\u0446\u0443\u0441\u043a\u0430\u0442\u0430 \u043a\u043d\u0438\u0436\u0435\u0432\u043d\u043e\u0441\u0442. \u041d\u0435\u0458\u0437\u0438\u043d\u0438\u0442\u0435 \u0438\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u045a\u0430 \u0441\u0435 \u043d\u0430\u0441\u043e\u0447\u0435\u043d\u0438 \u043a\u043e\u043d \u0435\u0432\u0440\u043e\u043f\u0441\u043a\u0430\u0442\u0430 \u043a\u0443\u043b\u0442\u0443\u0440\u043d\u0430 \u0438 \u0438\u043d\u0442\u0435\u043b\u0435\u043a\u0442\u0443\u0430\u043b\u043d\u0430 \u0438\u0441\u0442\u043e\u0440\u0438\u0458\u0430 \u0432\u043e \u043f\u0435\u0440\u0438\u043e\u0434\u043e\u0442 \u043e\u0434 13 \u0434\u043e 18 \u0432\u0435\u043a. \u041d\u0435\u0458\u0437\u0438\u043d\u0438\u0442\u0435 \u043f\u043e\u043d\u043e\u0432\u0438 \u0438\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u045a\u0430 \u0441\u0435 \u0444\u043e\u043a\u0443\u0441\u0438\u0440\u0430\u043d\u0438 \u043d\u0430 \u043f\u0440\u0430\u0433\u043c\u0430\u0442\u0438\u043a\u0430\u0442\u0430 \u043d\u0430 \u0433\u043e\u0432\u043e\u0440\u043d\u0438\u0442\u0435 \u0447\u0438\u043d\u043e\u0432\u0438 \u0432\u043e \u0434\u0438\u0441\u043a\u0443\u0440\u0441\u043e\u0442 \u043d\u0430 \u0441\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u0438\u0442\u0435 \u043a\u043d\u0438\u0436\u0435\u0432\u043d\u0438 \u0430\u0432\u0442\u043e\u0440\u0438. \u041e\u0434 2006 \u0433\u043e\u0434\u0438\u043d\u0430 \u0430\u043a\u0442\u0438\u0432\u043d\u043e \u0443\u0447\u0435\u0441\u0442\u0432\u0443\u0432\u0430 \u0432\u043e \u0430\u043a\u0430\u0434\u0435\u043c\u0441\u043a\u043e\u0442\u043e \u0438\u0437\u0434\u0430\u0432\u0430\u0448\u0442\u0432\u043e \u043a\u0430\u043a\u043e \u0443\u0440\u0435\u0434\u043d\u0438\u043a \u0438 \u0440\u0435\u0446\u0435\u043d\u0437\u0435\u043d\u0442.",
+            "research_label": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0438",
+            "research": ["\u0415\u0432\u0440\u043e\u043f\u0441\u043a\u0430 \u043a\u0443\u043b\u0442\u0443\u0440\u043d\u0430 \u0438\u0441\u0442\u043e\u0440\u0438\u0458\u0430 (13\u201318 \u0432\u0435\u043a)", "\u0420\u043e\u043c\u0430\u043d\u0441\u043a\u0438 \u0438 \u0441\u043b\u043e\u0432\u0435\u043d\u0441\u043a\u0438 \u043a\u0443\u043b\u0442\u0443\u0440\u0438", "\u041f\u0440\u0430\u0433\u043c\u0430\u0442\u0438\u043a\u0430 \u043d\u0430 \u0433\u043e\u0432\u043e\u0440\u043d\u0438 \u0447\u0438\u043d\u043e\u0432\u0438", "\u041a\u043e\u043c\u043f\u0430\u0440\u0430\u0442\u0438\u0432\u043d\u0430 \u043a\u043d\u0438\u0436\u0435\u0432\u043d\u043e\u0441\u0442"]
+          },
+          "en": {
+            "title": "Prof. Dr. Eva Gjorgievska",
+            "subtitle": "Full Professor | UGD \u2013 \u0160tip",
+            "body": "Eva Gjorgievska is a Full Professor of French and Comparative Literature at Goce Del\u010dev University in \u0160tip, North Macedonia. She earned her PhD from the University of Paris, France, with a dissertation focused on French literature. Her research explores European cultural and intellectual history from the 13th to the 18th centuries, with particular attention to Romance and Slavic cultures, as well as the transfer of ideas across Central Europe. Her recent research is focused on the pragmatics of speech acts in literary works of contemporary literary authors. Since 2006, she has been actively involved in academic publishing as editor and reviewer of scholarly monographs, volumes from international conferences, and academic journals.",
+            "research_label": "Research Interests",
+            "research": ["European cultural history (13th\u201318th c.)", "Romance and Slavic cultures", "Pragmatics of speech acts", "Comparative literature"]
+          }
+        }
       },
       {
-        "name": "проф. д-р Брикена Џафери",
-        "role": "Истражувач",
-        "affiliation": "УЈИЕ",
+        "name": "\u043f\u0440\u043e\u0444. \u0434-\u0440 \u0413\u0437\u0438\u043c \u040f\u0430\u0444\u0435\u0440\u0438",
+        "role": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447",
+        "affiliation": "\u0423\u0408\u0418\u0415",
         "image": null,
-        "bio": null
+        "bio": null,
+        "cv": {
+          "mk": {
+            "title": "\u043f\u0440\u043e\u0444. \u0434-\u0440 \u0413\u0437\u0438\u043c \u040f\u0430\u0444\u0435\u0440\u0438",
+            "subtitle": "\u0420\u0435\u0434\u043e\u0432\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 | \u0423\u0408\u0418\u0415 \u2013 \u0422\u0435\u0442\u043e\u0432\u043e",
+            "body": "\u0413\u0437\u0438\u043c \u040f\u0430\u0444\u0435\u0440\u0438 \u043e\u0434 2013 \u0433\u043e\u0434\u0438\u043d\u0430 \u0435 \u0440\u0435\u0434\u043e\u0432\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 \u043f\u043e \u0433\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430 \u043d\u0430 \u041a\u0430\u0442\u0435\u0434\u0440\u0430\u0442\u0430 \u0437\u0430 \u0433\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u043f\u0440\u0438 \u0423\u043d\u0438\u0432\u0435\u0440\u0437\u0438\u0442\u0435\u0442\u043e\u0442 \u043d\u0430 \u0408\u0443\u0433\u043e\u0438\u0441\u0442\u043e\u0447\u043d\u0430 \u0415\u0432\u0440\u043e\u043f\u0430 \u0432\u043e \u0422\u0435\u0442\u043e\u0432\u043e. \u041d\u0435\u0433\u043e\u0432\u0438\u0442\u0435 \u0438\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0438 \u043e\u043f\u0444\u0430\u045c\u0430\u0430\u0442: \u0441\u0438\u043d\u0442\u0430\u043a\u0441\u0430, \u043c\u043e\u0440\u0444\u043e\u043b\u043e\u0433\u0438\u0458\u0430, \u043a\u043e\u043d\u0442\u0440\u0430\u0441\u0442\u0438\u0432\u043d\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430, \u043f\u0440\u0430\u0433\u043c\u0430\u0442\u0438\u043a\u0430, \u043f\u043e\u0432\u0435\u045c\u0435\u0458\u0430\u0437\u0438\u0447\u043d\u043e\u0441\u0442, \u0458\u0430\u0437\u0438\u0447\u043d\u0430 \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0430 \u0438 \u0433\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0438 \u043a\u0430\u043a\u043e \u0441\u0442\u0440\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a. \u0410\u0432\u0442\u043e\u0440 \u0435 \u043d\u0430 \u0431\u0440\u043e\u0458\u043d\u0438 \u043d\u0430\u0443\u0447\u043d\u0438 \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438 \u0438 \u0443\u0447\u0435\u0441\u0442\u0432\u0443\u0432\u0430\u043b \u0432\u043e \u043f\u043e\u0432\u0435\u045c\u0435 \u043c\u0435\u0453\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u0438 \u043f\u0440\u043e\u0435\u043a\u0442\u0438.",
+            "research_label": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0438",
+            "research": ["\u0421\u0438\u043d\u0442\u0430\u043a\u0441\u0430", "\u041c\u043e\u0440\u0444\u043e\u043b\u043e\u0433\u0438\u0458\u0430", "\u041a\u043e\u043d\u0442\u0440\u0430\u0441\u0442\u0438\u0432\u043d\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430", "\u041f\u0440\u0430\u0433\u043c\u0430\u0442\u0438\u043a\u0430", "\u041f\u043e\u0432\u0435\u045c\u0435\u0458\u0430\u0437\u0438\u0447\u043d\u043e\u0441\u0442", "\u0408\u0430\u0437\u0438\u0447\u043d\u0430 \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0430"]
+          },
+          "en": {
+            "title": "Prof. Dr. Gzim Xhaferri",
+            "subtitle": "Full Professor | SEEU \u2013 Tetovo",
+            "body": "Gzim Xhaferri has been a Full Professor of German linguistics in the Department of German at South East European University in Tetovo, North Macedonia, since 2013. After completing his studies in German language and literature and earning his PhD in linguistics at the University of Prishtina, Kosovo, he assumed the position of Head of the Department of German at SEEU as early as 2002. His research focuses on syntax, morphology, contrastive linguistics, pragmatics, multilingualism, language policy, and German as a Foreign Language. He is the author of numerous academic publications and has participated in various international projects in the fields of linguistics, language policy, and multilingualism.",
+            "research_label": "Research Interests",
+            "research": ["Syntax", "Morphology", "Contrastive Linguistics", "Pragmatics", "Multilingualism", "Language Policy"]
+          }
+        }
       },
       {
-        "name": "проф. д-р Гзим Џафери",
-        "role": "Истражувач",
-        "affiliation": "УЈИЕ",
+        "name": "\u043f\u0440\u043e\u0444. \u0434-\u0440 \u0411\u0440\u0438\u043a\u0435\u043d\u0430 \u040f\u0430\u0444\u0435\u0440\u0438",
+        "role": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447",
+        "affiliation": "\u0423\u0408\u0418\u0415",
         "image": null,
-        "bio": null
+        "bio": null,
+        "cv": {
+          "mk": {
+            "title": "\u043f\u0440\u043e\u0444. \u0434-\u0440 \u0411\u0440\u0438\u043a\u0435\u043d\u0430 \u040f\u0430\u0444\u0435\u0440\u0438",
+            "subtitle": "\u0420\u0435\u0434\u043e\u0432\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 | \u0423\u0408\u0418\u0415",
+            "body": "\u0411\u0440\u0438\u043a\u0435\u043d\u0430 \u040f\u0430\u0444\u0435\u0440\u0438 \u0435 \u0440\u0435\u0434\u043e\u0432\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 \u043f\u043e \u043f\u0440\u0438\u043c\u0435\u043d\u0435\u0442\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430 \u043d\u0430 \u0424\u0430\u043a\u0443\u043b\u0442\u0435\u0442\u043e\u0442 \u0437\u0430 \u0458\u0430\u0437\u0438\u0446\u0438, \u043a\u0443\u043b\u0442\u0443\u0440\u0438 \u0438 \u043a\u043e\u043c\u0443\u043d\u0438\u043a\u0430\u0446\u0438\u0458\u0430 \u043f\u0440\u0438 \u0423\u0408\u0418\u0415. \u041d\u0435\u0458\u0437\u0438\u043d\u0438\u043e\u0442 \u043d\u0430\u0441\u0442\u0430\u0432\u0435\u043d \u0430\u043d\u0433\u0430\u0436\u043c\u0430\u043d \u043e\u043f\u0444\u0430\u045c\u0430 \u043c\u0435\u0442\u043e\u0434\u0438\u043a\u0430 \u043d\u0430 \u043d\u0430\u0441\u0442\u0430\u0432\u0430 \u043f\u043e \u0430\u043d\u0433\u043b\u0438\u0441\u043a\u0438 \u043a\u0430\u043a\u043e \u0441\u0442\u0440\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a, \u0434\u0438\u0433\u0438\u0442\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u0458\u0430 \u0438 \u0443\u0447\u0435\u045a\u0435, \u0443\u0441\u0432\u043e\u0458\u0443\u0432\u0430\u045a\u0435 \u043d\u0430 \u0432\u0442\u043e\u0440 \u0458\u0430\u0437\u0438\u043a \u0438 \u0430\u043a\u0430\u0434\u0435\u043c\u0441\u043a\u043e \u043f\u0438\u0448\u0443\u0432\u0430\u045a\u0435. \u0410\u043a\u0442\u0438\u0432\u043d\u043e \u0443\u0447\u0435\u0441\u0442\u0432\u0443\u0432\u0430\u043b\u0430 \u043d\u0430 \u0431\u0440\u043e\u0458\u043d\u0438 \u043d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u043d\u0438 \u0438 \u043c\u0435\u0453\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u0438 \u043a\u043e\u043d\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u0438.",
+            "research_label": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0438",
+            "research": ["\u041d\u0430\u0441\u0442\u0430\u0432\u0430 \u043f\u043e \u0430\u043d\u0433\u043b\u0438\u0441\u043a\u0438 \u043a\u0430\u043a\u043e \u0441\u0442\u0440\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a", "\u0414\u0438\u0433\u0438\u0442\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u0458\u0430 \u0432\u043e \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435\u0442\u043e", "\u041f\u043e\u0432\u0435\u045c\u0435\u0458\u0430\u0437\u0438\u0447\u043d\u043e\u0441\u0442", "\u041f\u0440\u0430\u0433\u043c\u0430\u0442\u0438\u043a\u0430", "\u0423\u0441\u0432\u043e\u0458\u0443\u0432\u0430\u045a\u0435 \u043d\u0430 \u0432\u0442\u043e\u0440 \u0458\u0430\u0437\u0438\u043a"]
+          },
+          "en": {
+            "title": "Prof. Dr. Brikena Xhaferi",
+            "subtitle": "Full Professor | SEEU",
+            "body": "Brikena Xhaferi is a Full Professor of Applied Linguistics at the Faculty of Languages, Cultures and Communication at South East European University (SEEU), North Macedonia. Her teaching portfolio encompasses EFL Methodology, Digitalization and Learning, Second Language Acquisition, Core Issues in EFL Teaching, and Academic Writing, with a strong emphasis on bridging theoretical frameworks and pedagogical practice. She has actively contributed to numerous national and international conferences, seminars, and collaborative research initiatives.",
+            "research_label": "Research Interests",
+            "research": ["EFL Teaching and Learning", "Digitalization in Education", "Multilingualism", "Pragmatics", "Second Language Acquisition"]
+          }
+        }
       },
       {
-        "name": "доц. д-р Ана Коцева",
-        "role": "Истражувач",
-        "affiliation": "УГД-Штип",
-        "image": "/static/img/team/ana-koceva.svg",
-        "bio": "Доцент по англиска филологија и прагматика."
-      },
-      {
-        "name": "доц. д-р Симона Серафимовска",
-        "role": "Истражувач",
-        "affiliation": "УГД-Штип",
+        "name": "\u043f\u0440\u043e\u0444. \u0434-\u0440 \u041c\u0430\u0440\u0438\u0458\u0430 \u041b\u0435\u043e\u043d\u0442\u0438\u045c",
+        "role": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447",
+        "affiliation": "\u0423\u0413\u0414-\u0428\u0442\u0438\u043f",
         "image": null,
-        "bio": null
+        "bio": null,
+        "cv": {
+          "mk": {
+            "title": "\u043f\u0440\u043e\u0444. \u0434-\u0440 \u041c\u0430\u0440\u0438\u0458\u0430 \u041b\u0435\u043e\u043d\u0442\u0438\u045c",
+            "subtitle": "\u0420\u0435\u0434\u043e\u0432\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 | \u0423\u0413\u0414 \u2013 \u0428\u0442\u0438\u043f",
+            "body": "\u041c\u0430\u0440\u0438\u0458\u0430 \u041b\u0435\u043e\u043d\u0442\u0438\u045c \u0435 \u0440\u0435\u0434\u043e\u0432\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 \u043d\u0430 \u041a\u0430\u0442\u0435\u0434\u0440\u0430\u0442\u0430 \u0437\u0430 \u0442\u0443\u0440\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u0438 \u043a\u043d\u0438\u0436\u0435\u0432\u043d\u043e\u0441\u0442 \u043f\u0440\u0438 \u0423\u0413\u0414 \u2013 \u0428\u0442\u0438\u043f, \u043a\u0430\u0434\u0435 \u0448\u0442\u043e \u043f\u0440\u0435\u0434\u0430\u0432\u0430 \u043d\u0430 \u0438\u0437\u0432\u043e\u0440\u043d\u0438 \u0438 \u043d\u0430 \u043d\u0435\u0438\u0437\u0432\u043e\u0440\u043d\u0438 \u0433\u043e\u0432\u043e\u0440\u0438\u0442\u0435\u043b\u0438 \u043d\u0430 \u0442\u0443\u0440\u0441\u043a\u0438\u043e\u0442 \u0458\u0430\u0437\u0438\u043a. \u041f\u0440\u0435\u0434\u0430\u0432\u0430 \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u0438 \u043e\u0434 \u0442\u0443\u0440\u0441\u043a\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430 (\u0444\u043e\u043d\u0435\u0442\u0438\u043a\u0430, \u043c\u043e\u0440\u0444\u043e\u043b\u043e\u0433\u0438\u0458\u0430, \u0441\u0438\u043d\u0442\u0430\u043a\u0441\u0430), \u043a\u043e\u043d\u0442\u0440\u0430\u0441\u0442\u0438\u0432\u043d\u0430 \u0433\u0440\u0430\u043c\u0430\u0442\u0438\u043a\u0430 \u043d\u0430 \u0442\u0443\u0440\u0441\u043a\u0438\u043e\u0442 \u0438 \u043c\u0430\u043a\u0435\u0434\u043e\u043d\u0441\u043a\u0438\u043e\u0442 \u0458\u0430\u0437\u0438\u043a \u0438 \u043f\u0440\u0435\u0432\u0435\u0434\u0443\u0432\u0430\u045a\u0435.",
+            "research_label": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0438",
+            "research": ["\u0422\u0443\u0440\u0441\u043a\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430", "\u041a\u043e\u043d\u0442\u0440\u0430\u0441\u0442\u0438\u0432\u043d\u0430 \u0442\u0443\u0440\u0441\u043a\u043e-\u043c\u0430\u043a\u0435\u0434\u043e\u043d\u0441\u043a\u0430 \u0433\u0440\u0430\u043c\u0430\u0442\u0438\u043a\u0430", "\u0422\u0443\u0440\u0441\u043a\u043e-\u043c\u0430\u043a\u0435\u0434\u043e\u043d\u0441\u043a\u0438 \u043f\u0440\u0435\u0432\u043e\u0434", "\u0422\u0443\u0440\u0446\u0438\u0437\u043c\u0438 \u0432\u043e \u043c\u0430\u043a\u0435\u0434\u043e\u043d\u0441\u043a\u0438\u043e\u0442 \u0458\u0430\u0437\u0438\u043a", "\u041f\u0440\u0430\u0433\u043c\u0430\u0442\u0438\u043a\u0430"]
+          },
+          "en": {
+            "title": "Prof. Dr. Marija Leontik",
+            "subtitle": "Full Professor | UGD \u2013 \u0160tip",
+            "body": "Marija Leontik is a Full Professor at the Department of Turkish Language and Literature at Goce Delcev University \u2013 Stip, where she teaches both native and non-native speakers of Turkish. She teaches courses in Turkish linguistics (phonetics, morphology, syntax), contrastive grammar of Turkish and Macedonian, and translation from Turkish into Macedonian and vice versa. Her research interests include Turkish linguistics, Turkish language acquisition, contrastive Turkish-Macedonian grammar, Turkish-Macedonian translation, Turkisms in the Macedonian language, and, more recently, pragmatics.",
+            "research_label": "Research Interests",
+            "research": ["Turkish Linguistics", "Contrastive Turkish-Macedonian Grammar", "Turkish-Macedonian Translation", "Turkisms in Macedonian", "Pragmatics"]
+          }
+        }
       },
       {
-        "name": "доц. д-р Сашка Јовановска",
-        "role": "Истражувач",
-        "affiliation": "УГД-Штип",
+        "name": "\u043f\u0440\u043e\u0444. \u0434-\u0440 \u041d\u0430\u0442\u043a\u0430 \u0408\u0430\u043d\u043a\u043e\u0432\u0430-\u0410\u043b\u0430\u0453\u043e\u0437\u043e\u0432\u0441\u043a\u0430",
+        "role": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447",
+        "affiliation": "\u0423\u0413\u0414-\u0428\u0442\u0438\u043f",
         "image": null,
-        "bio": null
+        "bio": null,
+        "cv": {
+          "mk": {
+            "title": "\u043f\u0440\u043e\u0444. \u0434-\u0440 \u041d\u0430\u0442\u043a\u0430 \u0408\u0430\u043d\u043a\u043e\u0432\u0430 \u0410\u043b\u0430\u0453\u043e\u0437\u043e\u0432\u0441\u043a\u0430",
+            "subtitle": "\u0412\u043e\u043d\u0440\u0435\u0434\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 | \u0423\u0413\u0414 \u2013 \u0428\u0442\u0438\u043f",
+            "body": "\u041d\u0430\u0442\u043a\u0430 \u0408\u0430\u043d\u043a\u043e\u0432\u0430 \u0410\u043b\u0430\u0453\u043e\u0437\u043e\u0432\u0441\u043a\u0430 \u0435 \u0432\u043e\u043d\u0440\u0435\u0434\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 \u043d\u0430 \u0424\u0438\u043b\u043e\u043b\u043e\u0448\u043a\u0438\u043e\u0442 \u0444\u0430\u043a\u0443\u043b\u0442\u0435\u0442 \u043f\u0440\u0438 \u0423\u0413\u0414 \u0438 \u0440\u0430\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b \u043d\u0430 \u041a\u0430\u0442\u0435\u0434\u0440\u0430\u0442\u0430 \u0437\u0430 \u0430\u043d\u0433\u043b\u0438\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u0438 \u043a\u043d\u0438\u0436\u0435\u0432\u043d\u043e\u0441\u0442. \u041d\u0435\u0458\u0437\u0438\u043d\u043e\u0442\u043e \u0438\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u045a\u0435 \u0441\u0435 \u0444\u043e\u043a\u0443\u0441\u0438\u0440\u0430 \u043d\u0430 \u0438\u043d\u0442\u0435\u0440\u043a\u0443\u043b\u0442\u0443\u0440\u043d\u0430 \u043a\u043e\u043c\u0443\u043d\u0438\u043a\u0430\u0442\u0438\u0432\u043d\u0430 \u043a\u043e\u043c\u043f\u0435\u0442\u0435\u043d\u0446\u0438\u0458\u0430 \u0432\u043e \u043d\u0430\u0441\u0442\u0430\u0432\u0430\u0442\u0430 \u043f\u043e \u0430\u043d\u0433\u043b\u0438\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u0438 \u0442\u0435\u043e\u0440\u0435\u0442\u0441\u043a\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430.",
+            "research_label": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0438",
+            "research": ["\u0418\u043d\u0442\u0435\u0440\u043a\u0443\u043b\u0442\u0443\u0440\u043d\u0430 \u043a\u043e\u043c\u0443\u043d\u0438\u043a\u0430\u0442\u0438\u0432\u043d\u0430 \u043a\u043e\u043c\u043f\u0435\u0442\u0435\u043d\u0446\u0438\u0458\u0430", "\u0422\u0435\u043e\u0440\u0435\u0442\u0441\u043a\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430", "\u041c\u043e\u0440\u0444\u043e\u043b\u043e\u0433\u0438\u0458\u0430 \u0438 \u0444\u043e\u043d\u043e\u043b\u043e\u0433\u0438\u0458\u0430"]
+          },
+          "en": {
+            "title": "Prof. Dr. Natka Jankova Alagjozovska",
+            "subtitle": "Associate Professor | UGD \u2013 \u0160tip",
+            "body": "Natka Jankova Alagjozovska is an Associate Professor at the Faculty of Philology, Goce Delcev University, and Head of the Department of English Language and Literature. Her research focuses on two main areas: Intercultural Communication Competence in English Language Teaching, and theoretical linguistics (specifically the relationship between morphology, phonology, and phonetics). She holds a PhD for her comparative study on ICC cognition among high school teachers and students. Her recent work includes publications on word stress, morphological structures, and the integration of intercultural awareness in language teaching.",
+            "research_label": "Research Interests",
+            "research": ["Intercultural Communicative Competence", "Theoretical Linguistics", "Morphology and Phonology"]
+          }
+        }
       },
       {
-        "name": "доц. д-р Марија Гркова",
-        "role": "Истражувач",
-        "affiliation": "УГД-Штип",
+        "name": "\u0434\u043e\u0446. \u0434-\u0440 \u0421\u0430\u0448\u043a\u0430 \u0408\u043e\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0430",
+        "role": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447",
+        "affiliation": "\u0423\u0413\u0414-\u0428\u0442\u0438\u043f",
         "image": null,
-        "bio": null
+        "bio": null,
+        "cv": {
+          "mk": {
+            "title": "\u0434\u043e\u0446. \u0434-\u0440 \u0421\u0430\u0448\u043a\u0430 \u0408\u043e\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0430",
+            "subtitle": "\u0412\u043e\u043d\u0440\u0435\u0434\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 | \u0423\u0413\u0414 \u2013 \u0428\u0442\u0438\u043f",
+            "body": "\u0421\u0430\u0448\u043a\u0430 \u0408\u043e\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0430 \u0435 \u0432\u043e\u043d\u0440\u0435\u0434\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 \u043d\u0430 \u041a\u0430\u0442\u0435\u0434\u0440\u0430\u0442\u0430 \u0437\u0430 \u0430\u043d\u0433\u043b\u0438\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u0438 \u043a\u043d\u0438\u0436\u0435\u0432\u043d\u043e\u0441\u0442 \u043f\u0440\u0438 \u0424\u0438\u043b\u043e\u043b\u043e\u0448\u043a\u0438\u043e\u0442 \u0444\u0430\u043a\u0443\u043b\u0442\u0435\u0442, \u0423\u0413\u0414 \u2013 \u0428\u0442\u0438\u043f. \u041d\u0435\u0458\u0437\u0438\u043d\u0430\u0442\u0430 \u0441\u043f\u0435\u0446\u0438\u0458\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u0458\u0430 \u0435 \u0432\u043e \u043e\u0431\u043b\u0430\u0441\u0442\u0430 \u043d\u0430 \u043f\u0440\u0438\u043c\u0435\u043d\u0435\u0442\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430 \u0438 \u0430\u043d\u0433\u043b\u0438\u0441\u043a\u0438 \u0441\u0442\u0443\u0434\u0438\u0438. \u041f\u0440\u0435\u0434\u0430\u0432\u0430: \u0421\u0438\u043d\u0442\u0430\u043a\u0441\u0430, \u0421\u0435\u043c\u0430\u043d\u0442\u0438\u043a\u0430, \u0421\u043e\u0446\u0438\u043e\u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430 \u0438 \u0422\u0435\u043a\u0441\u0442\u0443\u0430\u043b\u043d\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430. \u0410\u0432\u0442\u043e\u0440 \u0435 \u043d\u0430 \u0431\u0440\u043e\u0458\u043d\u0438 \u043d\u0430\u0443\u0447\u043d\u0438 \u0442\u0440\u0443\u0434\u043e\u0432\u0438, \u043c\u043e\u043d\u043e\u0433\u0440\u0430\u0444\u0438\u0458\u0430 \u0438 \u0434\u0432\u0430 \u0443\u043d\u0438\u0432\u0435\u0440\u0437\u0438\u0442\u0435\u0442\u0441\u043a\u0438 \u0443\u0447\u0435\u0431\u043d\u0438\u043a\u0430.",
+            "research_label": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0438",
+            "research": ["\u041f\u0440\u0438\u043c\u0435\u043d\u0435\u0442\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430", "\u0421\u0438\u043d\u0442\u0430\u043a\u0441\u0430 \u043d\u0430 \u0430\u043d\u0433\u043b\u0438\u0441\u043a\u0438\u043e\u0442 \u0458\u0430\u0437\u0438\u043a", "\u0421\u0435\u043c\u0430\u043d\u0442\u0438\u043a\u0430", "\u0421\u043e\u0446\u0438\u043e\u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430"]
+          },
+          "en": {
+            "title": "Assoc. Prof. Dr. Sashka Jovanovska",
+            "subtitle": "Associate Professor | UGD \u2013 \u0160tip",
+            "body": "Sashka Jovanovska is an Associate Professor in the Department of English Language and Literature at the Faculty of Philology, Goce Delcev University, Stip. Her academic specialization lies within the field of Applied Linguistics and English Studies. She teaches English Syntax, English Semantics, Sociolinguistics, and Text Linguistics. Beyond teaching, she has been actively engaged as a translator, interpreter, and invited lecturer at national and international conferences. She has participated in numerous international research projects. Her scholarly production comprises numerous academic publications, a monograph, and two university textbooks in linguistics.",
+            "research_label": "Research Interests",
+            "research": ["Applied Linguistics", "English Syntax", "Semantics", "Sociolinguistics"]
+          }
+        }
       },
       {
-        "name": "доц. д-р Марија Соколова",
-        "role": "Истражувач",
-        "affiliation": "УГД-Штип",
+        "name": "\u0434\u043e\u0446. \u0434-\u0440 \u0410\u043d\u0430 \u041a\u043e\u0446\u0435\u0432\u0430",
+        "role": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447",
+        "affiliation": "\u0423\u0413\u0414-\u0428\u0442\u0438\u043f",
         "image": null,
-        "bio": null
+        "bio": null,
+        "cv": {
+          "mk": {
+            "title": "\u0434\u043e\u0446. \u0434-\u0440 \u0410\u043d\u0430 \u041a\u043e\u0446\u0435\u0432\u0430",
+            "subtitle": "\u0414\u043e\u0446\u0435\u043d\u0442 | \u0423\u0413\u0414 \u2013 \u0428\u0442\u0438\u043f",
+            "body": "\u0410\u043d\u0430 \u041a\u043e\u0446\u0435\u0432\u0430 \u0435 \u0434\u043e\u043a\u0442\u043e\u0440 \u043f\u043e \u0430\u043d\u0433\u043b\u0438\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u0438 \u0440\u0430\u0431\u043e\u0442\u0438 \u043a\u0430\u043a\u043e \u0434\u043e\u0446\u0435\u043d\u0442 \u043d\u0430 \u0424\u0438\u043b\u043e\u043b\u043e\u0448\u043a\u0438\u043e\u0442 \u0444\u0430\u043a\u0443\u043b\u0442\u0435\u0442 \u043f\u0440\u0438 \u0423\u0413\u0414 \u2013 \u0428\u0442\u0438\u043f. \u041f\u0440\u0435\u0434\u0430\u0432\u0430: \u041a\u043e\u043d\u0442\u0440\u0430\u0441\u0442\u0438\u0432\u043d\u0430 \u0430\u043d\u0430\u043b\u0438\u0437\u0430, \u041f\u0440\u0430\u0433\u043c\u0430\u0442\u0438\u043a\u0430 \u0438 \u0410\u043a\u0430\u0434\u0435\u043c\u0441\u043a\u043e \u043f\u0438\u0448\u0443\u0432\u0430\u045a\u0435. \u0423\u0447\u0435\u0441\u0442\u0432\u0443\u0432\u0430\u043b\u0430 \u043d\u0430 \u0431\u0440\u043e\u0458\u043d\u0438 \u043c\u0435\u0453\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u0438 \u043a\u043e\u043d\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u0438 \u0438 \u0438\u043c\u0430 \u043e\u0431\u0458\u0430\u0432\u0435\u043d\u043e \u0442\u0440\u0443\u0434\u043e\u0432\u0438 \u0432\u043e \u043c\u0435\u0453\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u0438 \u043d\u0430\u0443\u0447\u043d\u0438 \u0441\u043f\u0438\u0441\u0430\u043d\u0438\u0458\u0430.",
+            "research_label": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0438",
+            "research": ["\u041a\u043e\u043d\u0442\u0440\u0430\u0441\u0442\u0438\u0432\u043d\u0430 \u043f\u0440\u0430\u0433\u043c\u0430\u0442\u0438\u043a\u0430", "\u0414\u0438\u0441\u043a\u0443\u0440\u0441\u043d\u0430 \u0430\u043d\u0430\u043b\u0438\u0437\u0430"]
+          },
+          "en": {
+            "title": "Asst. Prof. Dr. Ana Koceva",
+            "subtitle": "Assistant Professor | UGD \u2013 \u0160tip",
+            "body": "Ana Koceva holds a PhD in English language. Currently she works as an Assistant Professor at the Faculty of Philology at Goce Delcev University in Stip, North Macedonia. She teaches Contrastive Analysis, Pragmatics, and Academic Writing. Her research interests include topics in contrastive pragmatics and discourse analysis. She has participated in numerous international conferences and published articles in international academic journals. She also has experience as an English teacher and translator.",
+            "research_label": "Research Interests",
+            "research": ["Contrastive Pragmatics", "Discourse Analysis"]
+          }
+        }
       },
       {
-        "name": "виш лектор Марица Тасевска",
-        "role": "Истражувач",
-        "affiliation": "УГД-Штип",
+        "name": "\u0434\u043e\u0446. \u0434-\u0440 \u041c\u0430\u0440\u0438\u0458\u0430 \u0413\u0440\u043a\u043e\u0432\u0430-\u0411\u0435\u0430\u0434\u0435\u0440",
+        "role": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447",
+        "affiliation": "\u0423\u0413\u0414-\u0428\u0442\u0438\u043f",
         "image": null,
-        "bio": null
+        "bio": null,
+        "cv": {
+          "mk": {
+            "title": "\u0434\u043e\u0446. \u0434-\u0440 \u041c\u0430\u0440\u0438\u0458\u0430 \u0413\u0440\u043a\u043e\u0432\u0430-\u0411\u0435\u0430\u0434\u0435\u0440",
+            "subtitle": "\u0412\u043e\u043d\u0440\u0435\u0434\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 | \u0423\u0413\u0414 \u2013 \u0428\u0442\u0438\u043f",
+            "body": "\u041c\u0430\u0440\u0438\u0458\u0430 \u0413\u0440\u043a\u043e\u0432\u0430-\u0411\u0435\u0430\u0434\u0435\u0440 \u0435 \u0432\u043e\u043d\u0440\u0435\u0434\u0435\u043d \u043f\u0440\u043e\u0444\u0435\u0441\u043e\u0440 \u043d\u0430 \u041a\u0430\u0442\u0435\u0434\u0440\u0430\u0442\u0430 \u0437\u0430 \u043c\u0430\u043a\u0435\u0434\u043e\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u0438 \u043a\u043d\u0438\u0436\u0435\u0432\u043d\u043e\u0441\u0442 \u043f\u0440\u0438 \u0424\u0438\u043b\u043e\u043b\u043e\u0448\u043a\u0438\u043e\u0442 \u0444\u0430\u043a\u0443\u043b\u0442\u0435\u0442, \u0423\u0413\u0414 \u2013 \u0428\u0442\u0438\u043f. \u041f\u0440\u0435\u0434\u0430\u0432\u0430: \u0421\u043e\u0432\u0440\u0435\u043c\u0435\u043d \u043c\u0430\u043a\u0435\u0434\u043e\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u0438 \u041c\u043e\u0440\u0444\u043e\u043b\u043e\u0433\u0438\u0458\u0430. \u041d\u0435\u0458\u0437\u0438\u043d \u0433\u043b\u0430\u0432\u0435\u043d \u0438\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441 \u0441\u0435 \u043f\u0440\u0430\u0432\u043e\u043f\u0438\u0441\u043d\u0438\u0442\u0435 \u043e\u0442\u0441\u0442\u0430\u043f\u0443\u0432\u0430\u045a\u0430. \u0418\u043c\u0430 \u0437\u043d\u0430\u0447\u0430\u0458\u043d\u043e \u0438\u0441\u043a\u0443\u0441\u0442\u0432\u043e \u0432\u043e \u043d\u0430\u0441\u0442\u0430\u0432\u0430\u0442\u0430 \u043f\u043e \u043c\u0430\u043a\u0435\u0434\u043e\u043d\u0441\u043a\u0438 \u043a\u0430\u043a\u043e \u0441\u0442\u0440\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a.",
+            "research_label": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0438",
+            "research": ["\u041f\u0440\u0430\u0432\u043e\u043f\u0438\u0441\u043d\u0438 \u043e\u0442\u0441\u0442\u0430\u043f\u0443\u0432\u0430\u045a\u0430", "\u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0441\u043a\u0438 \u043a\u0430\u043a\u043e \u0441\u0442\u0440\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a"]
+          },
+          "en": {
+            "title": "Assoc. Prof. Dr. Marija Grkova-Beader",
+            "subtitle": "Associate Professor | UGD \u2013 \u0160tip",
+            "body": "Marija Grkova-Beader is an Associate Professor at the Department of Macedonian Language and Literature at the Faculty of Philology, Goce Delchev University in Shtip. She teaches Contemporary Macedonian Language and Morphology. She has participated in numerous conferences and seminars within the country, and her primary research interest is orthographic deviations. She also has extensive experience in teaching Macedonian as a foreign language.",
+            "research_label": "Research Interests",
+            "research": ["Orthographic Deviations", "Macedonian as a Foreign Language"]
+          }
+        }
       },
       {
-        "name": "Александра Митева",
-        "role": "Млад истражувач",
-        "affiliation": "УГД-Штип",
+        "name": "\u0432\u0438\u0448 \u043b\u0435\u043a\u0442\u043e\u0440 \u041c\u0430\u0440\u0438\u0446\u0430 \u0422\u0430\u0441\u0435\u0432\u0441\u043a\u0430",
+        "role": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447",
+        "affiliation": "\u0423\u0413\u0414-\u0428\u0442\u0438\u043f",
         "image": null,
-        "bio": null
+        "bio": null,
+        "cv": {
+          "mk": {
+            "title": "\u0432\u0438\u0448 \u043b\u0435\u043a\u0442\u043e\u0440 \u041c\u0430\u0440\u0438\u0446\u0430 \u0422\u0430\u0441\u0435\u0432\u0441\u043a\u0430",
+            "subtitle": "\u0412\u0438\u0448 \u043b\u0435\u043a\u0442\u043e\u0440 | \u0423\u0413\u0414 \u2013 \u0428\u0442\u0438\u043f",
+            "body": "\u041c\u0430\u0440\u0438\u0446\u0430 \u0422\u0430\u0441\u0435\u0432\u0441\u043a\u0430 \u0435 \u0432\u0438\u0448 \u043b\u0435\u043a\u0442\u043e\u0440 \u043d\u0430 \u0424\u0438\u043b\u043e\u043b\u043e\u0448\u043a\u0438\u043e\u0442 \u0444\u0430\u043a\u0443\u043b\u0442\u0435\u0442 \u043f\u0440\u0438 \u0423\u0413\u0414 \u0432\u043e \u0428\u0442\u0438\u043f. \u041f\u0440\u0435\u0434\u0430\u0432\u0430 \u0421\u043e\u0432\u0440\u0435\u043c\u0435\u043d \u0433\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u0438 \u0413\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u043a\u0430\u043a\u043e \u0438\u0437\u0431\u043e\u0440\u0435\u043d \u043f\u0440\u0435\u0434\u043c\u0435\u0442. \u0410\u0432\u0442\u043e\u0440 \u0435 \u043d\u0430 \u043f\u043e\u0432\u0435\u045c\u0435 \u043d\u0430\u0443\u0447\u043d\u0438 \u0442\u0440\u0443\u0434\u043e\u0432\u0438 \u0432\u043e \u0434\u043e\u043c\u0430\u0448\u043d\u0438 \u0438 \u043c\u0435\u0453\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u0438 \u0441\u043f\u0438\u0441\u0430\u043d\u0438\u0458\u0430. \u0412\u043a\u043b\u0443\u0447\u0435\u043d\u0430 \u0435 \u0432\u043e \u043f\u043e\u0432\u0435\u045c\u0435 \u043d\u0430\u0443\u0447\u043d\u043e-\u0438\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u043f\u0440\u043e\u0435\u043a\u0442\u0438.",
+            "research_label": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0438",
+            "research": ["\u0413\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a", "\u0418\u043d\u0442\u0435\u0440\u043a\u0443\u043b\u0442\u0443\u0440\u043d\u0430 \u043a\u043e\u043c\u0443\u043d\u0438\u043a\u0430\u0446\u0438\u0458\u0430", "\u041c\u0435\u0442\u043e\u0434\u0438\u043a\u0430 \u043d\u0430 \u043d\u0430\u0441\u0442\u0430\u0432\u0430\u0442\u0430 \u043f\u043e \u0433\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a"]
+          },
+          "en": {
+            "title": "Senior Lecturer Marica Tasevska",
+            "subtitle": "Senior Lecturer | UGD \u2013 \u0160tip",
+            "body": "Marica Tasevska is a Senior Lecturer at the Faculty of Philology at Goce Delcev University in \u0160tip. She teaches Contemporary German Language and German as an Elective Course. She is the author of several academic papers published in national and international journals and has participated in numerous scientific conferences in the fields of German language studies and the teaching of German as a foreign language. She has been engaged in various research projects aimed at advancing the teaching of German and Macedonian, intercultural communication, and contemporary educational methodologies.",
+            "research_label": "Research Interests",
+            "research": ["German Language", "Intercultural Communication", "Methodology of Teaching German"]
+          }
+        }
       },
       {
-        "name": "Катерина Харбова",
-        "role": "Млад истражувач", 
-        "affiliation": "УГД-Штип",
+        "name": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0430 \u041c\u0438\u043d\u043a\u043e\u0432\u0430",
+        "role": "\u041c\u043b\u0430\u0434 \u0438\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447",
+        "affiliation": "\u0421\u0423 \u0408\u0430\u043d\u0435 \u0421\u0430\u043d\u0434\u0430\u043d\u0441\u043a\u0438 \u2013 \u0421\u0442\u0440\u0443\u043c\u0438\u0446\u0430",
         "image": null,
-        "bio": null
+        "bio": null,
+        "cv": {
+          "mk": {
+            "title": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0430 \u041c\u0438\u043d\u043a\u043e\u0432\u0430",
+            "subtitle": "\u041d\u0430\u0441\u0442\u0430\u0432\u043d\u0438\u043a \u043f\u043e \u0433\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a | \u0421\u0423 \u0408\u0430\u043d\u0435 \u0421\u0430\u043d\u0434\u0430\u043d\u0441\u043a\u0438 \u2013 \u0421\u0442\u0440\u0443\u043c\u0438\u0446\u0430",
+            "body": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0430 \u041c\u0438\u043d\u043a\u043e\u0432\u0430 \u0435 \u043d\u0430\u0441\u0442\u0430\u0432\u043d\u0438\u043a \u043f\u043e \u0433\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u0432\u043e \u0441\u0440\u0435\u0434\u043d\u043e\u0442\u043e \u0443\u0447\u0438\u043b\u0438\u0448\u0442\u0435 \u201e\u0408\u0430\u043d\u0435 \u0421\u0430\u043d\u0434\u0430\u043d\u0441\u043a\u0438\u201c \u0432\u043e \u0421\u0442\u0440\u0443\u043c\u0438\u0446\u0430. \u041c\u0430\u0433\u0438\u0441\u0442\u0440\u0430\u043d\u0442 \u043f\u043e \u0433\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430 \u0441\u043e \u0444\u043e\u043a\u0443\u0441 \u043d\u0430 \u0441\u0435\u043c\u0430\u043d\u0442\u0438\u043a\u0430 \u0438 \u043f\u0440\u0430\u0433\u043c\u0430\u0442\u0438\u043a\u0430.",
+            "research_label": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0438",
+            "research": ["\u041f\u0440\u0430\u0433\u043c\u0430\u0442\u0438\u043a\u0430", "\u0413\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430", "\u041c\u043e\u0434\u0430\u043b\u043d\u0438 \u0433\u043b\u0430\u0433\u043e\u043b\u0438", "\u0414\u0438\u0441\u043a\u0443\u0440\u0441\u043d\u0430 \u0430\u043d\u0430\u043b\u0438\u0437\u0430"]
+          },
+          "en": {
+            "title": "Aleksandra Minkova",
+            "subtitle": "German Language Teacher | Jane Sandanski Secondary School \u2013 Strumica",
+            "body": "Aleksandra Minkova is a German language teacher at the secondary school \u201eJane Sandanski\u201c, North Macedonia. She is currently a Master's student in German Linguistics, with a research focus on semantics and pragmatics in the German language. Her academic interests include pragmatics, German linguistics, modal verbs, discourse analysis, and the teaching of German as a Foreign Language.",
+            "research_label": "Research Interests",
+            "research": ["Pragmatics", "German Linguistics", "Modal Verbs", "Discourse Analysis"]
+          }
+        }
       },
       {
-        "name": "Владимир Ивановски",
-        "role": "Млад истражувач",
-        "affiliation": "УГД-Штип",
+        "name": "\u041a\u0430\u0442\u0435\u0440\u0438\u043d\u0430 \u0425\u0430\u0440\u0431\u043e\u0432\u0430",
+        "role": "\u041c\u043b\u0430\u0434 \u0438\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447",
+        "affiliation": "\u0423\u0413\u0414-\u0428\u0442\u0438\u043f",
+        "image": null,
+        "bio": null,
+        "cv": {
+          "mk": {
+            "title": "\u041a\u0430\u0442\u0435\u0440\u0438\u043d\u0430 \u0425\u0430\u0440\u0431\u043e\u0432\u0430",
+            "subtitle": "\u041d\u0430\u0441\u0442\u0430\u0432\u043d\u0438\u043a \u043f\u043e \u0433\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a | \u0428\u0442\u0438\u043f",
+            "body": "\u041a\u0430\u0442\u0435\u0440\u0438\u043d\u0430 \u0425\u0430\u0440\u0431\u043e\u0432\u0430 \u0435 \u043d\u0430\u0441\u0442\u0430\u0432\u043d\u0438\u043a \u043f\u043e \u0433\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u0441\u043e \u043f\u043e\u0432\u0435\u045c\u0435 \u043e\u0434 \u0434\u0435\u0441\u0435\u0442 \u0433\u043e\u0434\u0438\u043d\u0438 \u043d\u0430\u0441\u0442\u0430\u0432\u043d\u043e \u0438\u0441\u043a\u0443\u0441\u0442\u0432\u043e \u0438 \u043e\u0441\u043d\u043e\u0432\u0430\u0447 \u043d\u0430 \u043f\u0440\u0438\u0432\u0430\u0442\u043d\u043e\u0442\u043e \u0443\u0447\u0438\u043b\u0438\u0448\u0442\u0435 \u0437\u0430 \u0433\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a \u201e\u0425\u0430\u0440\u0431\u043e\u0432\u0430\u201c \u0432\u043e \u0428\u0442\u0438\u043f. \u0420\u0430\u0431\u043e\u0442\u0438 \u0438 \u043a\u0430\u043a\u043e \u043e\u0432\u043b\u0430\u0441\u0442\u0435\u043d \u0441\u0443\u0434\u0441\u043a\u0438 \u043f\u0440\u0435\u0432\u0435\u0434\u0443\u0432\u0430\u0447 \u043f\u043e \u0433\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0438 \u0458\u0430\u0437\u0438\u043a.",
+            "research_label": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0438",
+            "research": ["\u0413\u0435\u0440\u043c\u0430\u043d\u0441\u043a\u0430 \u043b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430", "\u041c\u0435\u0442\u043e\u0434\u0438\u043a\u0430 \u043d\u0430 \u043d\u0430\u0441\u0442\u0430\u0432\u0430\u0442\u0430", "\u0421\u0435\u043c\u0430\u043d\u0442\u0438\u043a\u0430 \u0438 \u0441\u0438\u043d\u0442\u0430\u043a\u0441\u0430"]
+          },
+          "en": {
+            "title": "Katerina Harbova",
+            "subtitle": "German Language Teacher | \u0160tip",
+            "body": "Katerina Harbova is a German language teacher with over ten years of teaching experience and the founder of her private German language school, Harbova in Shtip. She is currently working on her Master's thesis on the analysis of German prepositions of place in Schritte International textbooks. In addition to her teaching and research, she works as a certified court translator for German language.",
+            "research_label": "Research Interests",
+            "research": ["German Linguistics", "Language Teaching Methodology", "Semantics and Syntax"]
+          }
+        }
+      },
+      {
+        "name": "Hana Hasanicaj",
+        "role": "\u041c\u043b\u0430\u0434 \u0438\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447",
+        "affiliation": "\u0424\u0418\u041d\u041a\u0418 \u2013 \u0421\u043a\u043e\u043f\u0458\u0435",
+        "image": null,
+        "bio": null,
+        "cv": {
+          "mk": {
+            "title": "Hana Hasanicaj",
+            "subtitle": "\u0421\u043e\u0444\u0442\u0432\u0435\u0440\u0441\u043a\u0438 \u0438\u043d\u0436\u0435\u043d\u0435\u0440 | \u0421\u043a\u043e\u043f\u0458\u0435",
+            "body": "Hana Hasanicaj \u0435 \u0441\u043e\u0444\u0442\u0432\u0435\u0440\u0441\u043a\u0438 \u0438\u043d\u0436\u0435\u043d\u0435\u0440 \u0432\u043e \u0444\u0430\u0440\u043c\u0430\u0446\u0435\u0432\u0442\u0441\u043a\u0430 \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0458\u0430 \u0432\u043e \u0421\u043a\u043e\u043f\u0458\u0435, \u0421\u0435\u0432\u0435\u0440\u043d\u0430 \u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430. \u0418\u043c\u0430 \u0438\u0441\u043a\u0443\u0441\u0442\u0432\u043e \u043a\u0430\u043a\u043e \u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u0438\u0441\u043a\u0438 \u0430\u0441\u0438\u0441\u0442\u0435\u043d\u0442 \u043d\u0430 \u0424\u0430\u043a\u0443\u043b\u0442\u0435\u0442\u043e\u0442 \u0437\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0442\u0438\u043a\u0430 \u0438 \u043a\u043e\u043c\u043f\u0458\u0443\u0442\u0435\u0440\u0441\u043a\u043e \u0438\u043d\u0436\u0435\u043d\u0435\u0440\u0441\u0442\u0432\u043e \u0432\u043e \u0421\u043a\u043e\u043f\u0458\u0435, \u043a\u0430\u0434\u0435 \u0448\u0442\u043e \u043c\u043e\u043c\u0435\u043d\u0442\u0430\u043b\u043d\u043e \u0433\u0438 \u0437\u0430\u0432\u0440\u0448\u0443\u0432\u0430 \u043c\u0430\u0433\u0438\u0441\u0442\u0435\u0440\u0441\u043a\u0438\u0442\u0435 \u0441\u0442\u0443\u0434\u0438\u0438 \u043f\u043e \u201e\u041d\u0430\u0443\u043a\u0430 \u0437\u0430 \u043f\u043e\u0434\u0430\u0442\u043e\u0446\u0438\u201c. \u0423\u0447\u0435\u0441\u0442\u0432\u0443\u0432\u0430\u043b\u0430 \u0432\u043e \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u0438 \u0438\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u043f\u0440\u043e\u0435\u043a\u0442\u0438 \u0444\u043e\u043a\u0443\u0441\u0438\u0440\u0430\u043d\u0438 \u043d\u0430 \u0438\u043d\u0436\u0435\u043d\u0435\u0440\u0441\u0442\u0432\u043e \u043d\u0430 \u043f\u043e\u0434\u0430\u0442\u043e\u0446\u0438, \u0430\u043d\u0430\u043b\u0438\u0437\u0430 \u043d\u0430 \u043f\u043e\u0434\u0430\u0442\u043e\u0446\u0438 \u0438 \u043c\u0430\u0448\u0438\u043d\u0441\u043a\u043e \u0443\u0447\u0435\u045a\u0435.",
+            "research_label": "\u0418\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447\u043a\u0438 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0438",
+            "research": ["\u0418\u043d\u0436\u0435\u043d\u0435\u0440\u0441\u0442\u0432\u043e \u043d\u0430 \u043f\u043e\u0434\u0430\u0442\u043e\u0446\u0438", "\u0410\u043d\u0430\u043b\u0438\u0437\u0430 \u043d\u0430 \u043f\u043e\u0434\u0430\u0442\u043e\u0446\u0438", "\u041c\u0430\u0448\u0438\u043d\u0441\u043a\u043e \u0443\u0447\u0435\u045a\u0435"]
+          },
+          "en": {
+            "title": "Hana Hasanicaj",
+            "subtitle": "Software Engineer | Skopje",
+            "body": "Hana Hasanicaj is a Software Engineer working for a pharmaceutical company in Skopje, North Macedonia. She has experience working as a Laboratory Assistant at the Faculty of Computer Science and Engineering in Skopje, where she is currently pursuing her Master's degree in \"Data Science in Computer Science and Engineering\". She has participated in various research projects, focusing on data engineering, data analysis, and machine learning involving medical data.",
+            "research_label": "Research Interests",
+            "research": ["Data Engineering", "Data Analysis", "Machine Learning"]
+          }
+        }
+      },
+      {
+        "name": "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0438",
+        "role": "\u041c\u043b\u0430\u0434 \u0438\u0441\u0442\u0440\u0430\u0436\u0443\u0432\u0430\u0447",
+        "affiliation": "\u0423\u0413\u0414-\u0428\u0442\u0438\u043f",
         "image": null,
         "bio": null
       }
