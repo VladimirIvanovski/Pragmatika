@@ -1,6 +1,14 @@
 from flask import Flask, render_template, send_file, session, redirect, url_for, request
 import json
 import os
+
+# Load .env file for local development
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 from document_manager import scan_documents, scan_documents_by_folder, get_document_path, group_documents_by_type, get_document_content, get_conference_entries
 
 app = Flask(__name__)
