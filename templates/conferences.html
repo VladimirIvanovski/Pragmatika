@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="page-hero">
+  <div class="container">
+    <h1>{{ copy.conf_title }}</h1>
+    <p>{{ copy.conf_intro }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    {% if entries %}
+      <div class="conf-list">
+        {% for entry in entries %}
+        <article class="conf-entry">
+          <h2 class="conf-title">{{ entry.title }}</h2>
+
+          {% if entry.content and entry.content.paragraphs %}
+            <div class="conf-text prose">
+              {% for p in entry.content.paragraphs %}
+                {% if p.style and ('Heading' in p.style or 'Title' in p.style) %}
+                  <h3>{{ p.text }}</h3>
+                {% else %}
+                  <p>{{ p.text }}</p>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if entry.content and entry.content.images %}
+            <div class="conf-gallery conf-gallery--simple">
+              {% for img in entry.content.images[:6] %}
+                <div class="conf-img-wrap">
+                  <img src="{{ img.path }}" alt="{{ entry.title }}" loading="lazy" />
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if entry.content and entry.content.tables %}
+            {% for table in entry.content.tables %}
+              <div class="table-wrapper" style="margin-top:16px;">
+                <table class="document-table">
+                  {% for row in table %}
+                    <tr>
+                      {% for cell in row %}
+                        <td>{{ cell }}</td>
+                      {% endfor %}
+                    </tr>
+                  {% endfor %}
+                </table>
+              </div>
+            {% endfor %}
+          {% endif %}
+
+        </article>
+        {% endfor %}
+      </div>
+
+    {% else %}
+      <div class="empty-state">
+        <div class="empty-icon">🎤</div>
+        <h3>{{ copy.conf_coming }}</h3>
+        <p>{{ copy.conf_preparing }}</p>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% endblock %}

@@ -4,13 +4,7 @@
 <div class="page-hero">
   <div class="container">
     <h1>{{ nav.gallery }}</h1>
-    <p>
-      {% if lang == 'mk' %}
-        Фотографии од истражувачки активности, конференции и тимски настани.
-      {% else %}
-        Photos from research activities, conferences, and team events.
-      {% endif %}
-    </p>
+    <p>{{ copy.gallery_intro }}</p>
   </div>
 </div>
 
@@ -33,14 +27,8 @@
       {% else %}
         <div class="empty-state">
           <div class="empty-icon">🖼️</div>
-          <h3>{% if lang == 'mk' %}Галеријата наскоро{% else %}Gallery coming soon{% endif %}</h3>
-          <p>
-            {% if lang == 'mk' %}
-              Фотографии ќе бидат додадени наскоро.
-            {% else %}
-              Photos will be added soon.
-            {% endif %}
-          </p>
+          <h3>{{ copy.gallery_coming }}</h3>
+          <p>{{ copy.gallery_photos }}</p>
         </div>
       {% endif %}
     </div>

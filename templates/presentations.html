@@ -4,13 +4,7 @@
 <div class="page-hero">
   <div class="container">
     <h1>{{ nav.presentations }}</h1>
-    <p>
-      {% if lang == 'mk' %}
-        Конференциски презентации и предавања на членовите на тимот.
-      {% else %}
-        Conference presentations and talks by project team members.
-      {% endif %}
-    </p>
+    <p>{{ copy.pres_intro }}</p>
   </div>
 </div>
 
@@ -35,16 +29,8 @@
     {% else %}
       <div class="empty-state">
         <div class="empty-icon">🎤</div>
-        <h3>
-          {% if lang == 'mk' %}Презентациите наскоро{% else %}Presentations coming soon{% endif %}
-        </h3>
-        <p>
-          {% if lang == 'mk' %}
-            Листата на презентации е во подготовка.
-          {% else %}
-            The presentations list is being prepared.
-          {% endif %}
-        </p>
+        <h3>{{ copy.pres_coming }}</h3>
+        <p>{{ copy.pres_preparing }}</p>
       </div>
     {% endif %}
 

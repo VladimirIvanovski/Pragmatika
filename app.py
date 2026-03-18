@@ -1,7 +1,7 @@
 from flask import Flask, render_template, send_file, session, redirect, url_for, request
 import json
 import os
-from document_manager import scan_documents, get_document_path, group_documents_by_type, get_document_content
+from document_manager import scan_documents, scan_documents_by_folder, get_document_path, group_documents_by_type, get_document_content, get_conference_entries
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'pragmatika-ugd-2025')
@@ -31,9 +31,17 @@ def get_page(full_content, key, lang):
         return section.get(lang, section.get('mk', {}))
     return section
 
+def get_current_lang():
+    """Get current language: URL param overrides session (for reliable switching)."""
+    lang = request.args.get('lang')
+    if lang in ('mk', 'en'):
+        session['lang'] = lang
+        return lang
+    return session.get('lang', 'mk')
+
 @app.context_processor
 def inject_globals():
-    lang = session.get('lang', 'mk')
+    lang = get_current_lang()
     raw  = load_translations()
 
     def flatten(section):
@@ -43,6 +51,7 @@ def inject_globals():
     common = flatten(raw.get('common', {}))
     footer = flatten(raw.get('footer', {}))
     pages  = flatten(raw.get('pages',  {}))
+    copy   = flatten(raw.get('copy',   {}))
 
     return {
         'lang':   lang,
@@ -50,6 +59,7 @@ def inject_globals():
         'common': common,
         'footer': footer,
         'pages':  pages,
+        'copy':   copy,
     }
 
 # ── Language switch ────────────────────────────────────────────────────────
@@ -58,24 +68,35 @@ def inject_globals():
 def set_lang(code):
     if code in ('mk', 'en'):
         session['lang'] = code
-    return redirect(request.referrer or url_for('index'))
+    next_url = request.args.get('next')
+    if next_url and next_url.startswith('/'):
+        target = next_url
+    elif request.referrer and request.referrer.strip():
+        target = request.referrer
+    else:
+        target = url_for('index')
+    # Append ?lang= to ensure language sticks even if session cookie is not persisted
+    sep = '&' if '?' in target else '?'
+    return redirect(target + sep + 'lang=' + code)
 
 # ── Pages ──────────────────────────────────────────────────────────────────
 
 @app.route('/')
 def index():
-    lang    = session.get('lang', 'mk')
+    lang    = get_current_lang()
     content = load_content()
     t       = load_translations()
+    home_vlings = content.get('home_vlings', {})
     return render_template('index.html',
                            active_page='home',
                            title=t.get('pages', {}).get('home', {}).get(lang, 'Почетна'),
                            content=get_page(content, 'home', lang),
+                           home_vlings=home_vlings,
                            lang=lang)
 
 @app.route('/about')
 def about():
-    lang    = session.get('lang', 'mk')
+    lang    = get_current_lang()
     content = load_content()
     t       = load_translations()
     return render_template('about.html',
@@ -86,7 +107,7 @@ def about():
 
 @app.route('/research')
 def research():
-    lang    = session.get('lang', 'mk')
+    lang    = get_current_lang()
     content = load_content()
     t       = load_translations()
     return render_template('research.html',
@@ -97,18 +118,22 @@ def research():
 
 @app.route('/team')
 def team():
-    lang    = session.get('lang', 'mk')
+    lang    = get_current_lang()
     content = load_content()
     t       = load_translations()
+    team_content = get_page(content, 'team', lang)
+    members = team_content.get('members', []) if isinstance(team_content, dict) else []
+    all_cvs = [m.get('cv') for m in members]
     return render_template('team.html',
                            active_page='team',
                            title=t.get('pages', {}).get('team', {}).get(lang, 'Тим'),
-                           content=get_page(content, 'team', lang),
+                           content=team_content,
+                           all_cvs=all_cvs,
                            lang=lang)
 
 @app.route('/gallery')
 def gallery():
-    lang    = session.get('lang', 'mk')
+    lang    = get_current_lang()
     content = load_content()
     t       = load_translations()
     return render_template('gallery.html',
@@ -119,7 +144,7 @@ def gallery():
 
 @app.route('/publications')
 def publications():
-    lang = session.get('lang', 'mk')
+    lang = get_current_lang()
     content = load_content()
     t = load_translations()
     return render_template('publications.html',
@@ -130,7 +155,7 @@ def publications():
 
 @app.route('/presentations')
 def presentations():
-    lang = session.get('lang', 'mk')
+    lang = get_current_lang()
     content = load_content()
     t = load_translations()
     return render_template('presentations.html',
@@ -141,7 +166,7 @@ def presentations():
 
 @app.route('/news')
 def news():
-    lang = session.get('lang', 'mk')
+    lang = get_current_lang()
     content = load_content()
     t = load_translations()
     return render_template('news.html',
@@ -150,9 +175,31 @@ def news():
                            content=get_page(content, 'news', lang),
                            lang=lang)
 
+@app.route('/conferences')
+def conferences():
+    lang = get_current_lang()
+    t = load_translations()
+    conf_entries = get_conference_entries()
+    return render_template('conferences.html',
+                           active_page='news',
+                           title=t.get('pages', {}).get('news', {}).get(lang, 'Конференции'),
+                           entries=conf_entries,
+                           lang=lang)
+
+@app.route('/documents/conference-image/<path:filepath>')
+def conference_image(filepath):
+    """Serve images from conference subfolders (e.g. Rabotilnica.../pic 1.jpeg)."""
+    import mimetypes
+    conf_dir = os.path.abspath(os.path.join(app.root_path, 'documents', 'Conferences'))
+    fp = os.path.normpath(os.path.join(conf_dir, filepath))
+    if not os.path.isfile(fp) or not os.path.abspath(fp).startswith(conf_dir):
+        return "Not found", 404
+    mime = mimetypes.guess_type(fp)[0] or 'image/jpeg'
+    return send_file(fp, mimetype=mime)
+
 @app.route('/contact')
 def contact():
-    lang = session.get('lang', 'mk')
+    lang = get_current_lang()
     t = load_translations()
     return render_template('contact.html',
                            active_page='contact',
@@ -161,29 +208,31 @@ def contact():
 
 @app.route('/documents')
 def documents():
-    lang            = session.get('lang', 'mk')
-    all_documents   = scan_documents()
+    lang              = get_current_lang()
+    all_documents     = scan_documents()
     grouped_documents = group_documents_by_type(all_documents)
-    content         = load_content()
-    t               = load_translations()
+    by_folder         = scan_documents_by_folder()
+    content           = load_content()
+    t                 = load_translations()
     return render_template('documents.html',
                            active_page='documents',
-                           title=t.get('pages', {}).get('documents', {}).get(lang, 'Документи'),
+                           title=t.get('pages', {}).get('materials', t.get('pages', {}).get('documents', {})).get(lang, 'Материјали'),
                            documents=all_documents,
                            grouped_documents=grouped_documents,
+                           by_folder=by_folder,
                            content=get_page(content, 'documents', lang),
                            lang=lang)
 
-@app.route('/documents/download/<filename>')
+@app.route('/documents/download/<path:filename>')
 def download_document(filename):
     file_path = get_document_path(filename)
     if file_path:
         return send_file(file_path, as_attachment=True)
     return "Document not found", 404
 
-@app.route('/documents/view/<filename>')
+@app.route('/documents/view/<path:filename>')
 def view_document(filename):
-    lang      = session.get('lang', 'mk')
+    lang      = get_current_lang()
     file_path = get_document_path(filename)
     if not file_path:
         return "Document not found", 404

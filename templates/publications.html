@@ -5,13 +5,7 @@
 <div class="page-hero">
   <div class="container">
     <h1>{{ nav.publications }}</h1>
-    <p>
-      {% if lang == 'mk' %}
-        Научни трудови, книги и поглавја во книги на членовите на тимот.
-      {% else %}
-        Research articles, books, and book chapters by project team members.
-      {% endif %}
-    </p>
+    <p>{{ copy.pub_intro }}</p>
   </div>
 </div>
 
@@ -38,16 +32,8 @@
     {% else %}
       <div class="empty-state">
         <div class="empty-icon">📄</div>
-        <h3>
-          {% if lang == 'mk' %}Публикациите наскоро{% else %}Publications coming soon{% endif %}
-        </h3>
-        <p>
-          {% if lang == 'mk' %}
-            Листата на публикации е во подготовка и наскоро ќе биде достапна.
-          {% else %}
-            The publications list is being prepared and will be available soon.
-          {% endif %}
-        </p>
+        <h3>{{ copy.pub_coming }}</h3>
+        <p>{{ copy.pub_preparing }}</p>
       </div>
     {% endif %}
 

@@ -114,11 +114,21 @@ body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto
 .nav-dropdown:hover .drop-arrow,
 .nav-dropdown.open   .drop-arrow { transform: rotate(180deg); color: #1e3a5f; }
 
+/* Bridge: extend hover area so mouse can reach menu without dropdown disappearing */
+.nav-dropdown::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 10px;
+}
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 6px);
+  top: 100%;
   left: 0;
+  margin-top: 2px;
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -129,7 +139,7 @@ body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto
   animation: dropIn .18s ease;
 }
 @keyframes dropIn {
-  from { opacity: 0; transform: translateY(-6px); }
+  from { opacity: 0; transform: translateY(-4px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 .nav-dropdown:hover .dropdown-menu,
@@ -170,6 +180,22 @@ body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto
 .hero-subtitle { color: var(--muted); margin: 0 auto 24px; font-size: 18px; }
 .hero-actions { display: inline-flex; gap: 10px; }
 .hero-bg { position: absolute; inset: -20% -10% auto -10%; height: 300px; background: radial-gradient(1000px 300px at 50% 0%, rgba(59,130,246,0.15), transparent 60%), radial-gradient(900px 250px at 50% 0%, rgba(20,184,166,0.12), transparent 60%); pointer-events: none; }
+
+/* VLingS-style home */
+.hero--compact { padding: 56px 0 40px; }
+.hero-intro { margin: 0 auto 20px; font-size: 16px; color: var(--muted); max-width: 680px; }
+.hero-contact-link { color: var(--primary); text-decoration: none; font-weight: 600; }
+.hero-contact-link:hover { text-decoration: underline; }
+.prose--wide { max-width: 800px; margin: 0 auto; }
+.project-desc { font-size: 17px; line-height: 1.7; color: #334155; }
+.section--alt { background: var(--accent); }
+.section-heading { font-size: 22px; font-weight: 800; margin: 0 0 16px; }
+.aims-list { margin: 0; padding-left: 22px; }
+.aims-list li { margin-bottom: 8px; line-height: 1.6; }
+.partners-list { margin: 0; padding-left: 22px; list-style: none; }
+.partners-list li { margin-bottom: 8px; }
+.partners-list a { color: var(--primary); text-decoration: none; }
+.partners-list a:hover { text-decoration: underline; }
 
 /* Buttons */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 18px; font-weight: 600; border-radius: 12px; border: 1px solid transparent; text-decoration: none; cursor: pointer; transition: transform .02s ease, background .2s ease, border .2s ease; }
@@ -611,6 +637,8 @@ body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto
   font-weight: 700;
   letter-spacing: -0.01em;
 }
+.slide-image-single { margin-top: 16px; max-width: 400px; }
+.slide-image-single img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); }
 .slide-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 24px; }
 .slide-image-wrapper { 
   position: relative; 
@@ -1193,7 +1221,48 @@ body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto
   .news-card { flex-direction: column; }
 }
 
+/* ── Conferences page (VLingS-style) ─────────────────────────── */
+.conf-list { display: flex; flex-direction: column; gap: 48px; }
+.conf-entry {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+}
+.conf-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 20px;
+  color: #1e3a5f;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--border);
+}
+.conf-text p { margin: 0 0 12px; line-height: 1.7; color: #334155; }
+.conf-text h3 { margin: 20px 0 10px; font-size: 17px; font-weight: 700; color: #1e3a5f; }
 
+.conf-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.conf-img-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.conf-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform .2s;
+}
+.conf-img-wrap:hover img { transform: scale(1.03); }
 
-
+@media (max-width: 640px) {
+  .conf-entry { padding: 20px; }
+  .conf-gallery { grid-template-columns: 1fr; }
+}
 

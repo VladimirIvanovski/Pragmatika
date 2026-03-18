@@ -7,7 +7,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M19 12H5M12 19l-7-7 7-7"/>
           </svg>
-          Назад кон документи
+          {{ common.back_to_docs }}
         </a>
         <h1 class="page-title">{{ content.title }}</h1>
       </div>
@@ -19,23 +19,13 @@
         </div>
       
       {% elif content.slides %}
-        <!-- PowerPoint Presentation Viewer -->
+        <!-- PowerPoint Presentation Viewer (simplified: text first, max 1 image per slide) -->
         <div class="presentation-viewer">
           {% for slide in content.slides %}
             <div class="slide-container">
               <div class="slide-header">
-                <h2>Слајд {{ slide.number }}</h2>
+                <h2>{{ common.slide }} {{ slide.number }}</h2>
               </div>
-              
-              {% if slide.images %}
-                <div class="slide-images">
-                  {% for image in slide.images %}
-                    <div class="slide-image-wrapper">
-                      <img src="{{ image.path }}" alt="{{ image.alt }}" class="slide-image" />
-                    </div>
-                  {% endfor %}
-                </div>
-              {% endif %}
               
               {% if slide.texts %}
                 <div class="slide-texts">
@@ -50,6 +40,11 @@
                   {% endfor %}
                 </div>
               {% endif %}
+              {% if slide.images and slide.images[0] %}
+                <div class="slide-image-single">
+                  <img src="{{ slide.images[0].path }}" alt="{{ common.slide }} {{ slide.number }}" loading="lazy" />
+                </div>
+              {% endif %}
             </div>
           {% endfor %}
         </div>
@@ -59,8 +54,8 @@
         <div class="document-viewer-wrapper">
           <div class="document-viewer">
             {% if content.images %}
-              <div class="document-images">
-                {% for image in content.images %}
+              <div class="document-images document-images--simple">
+                {% for image in content.images[:8] %}
                   <div class="document-image-wrapper">
                     <div class="image-overlay">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
@@ -125,7 +120,7 @@
       
       {% else %}
         <div class="empty-state">
-          <p>Не можам да го прикажам содржината на овој документ.</p>
+          <p>{{ common.cannot_display }}</p>
         </div>
       {% endif %}
     </div>
